@@ -1,0 +1,30 @@
+{
+  "name": "@reelyactive/node-red-pareto-anywhere",
+  "homepage": "https://github.com/reelyactive/node-red-pareto-anywhere/",
+  "author": {
+    "name": "reelyActive",
+    "email": "info@reelyactive.com"
+  },
+  "description": "Access real-time data from Pareto Anywhere in Node-RED",
+  "dependencies": {
+    "socket.io-client": "^4.4.1"
+  },
+  "keywords": [ "node-red" ],
+  "version": "0.1.0",
+  "node-red": {
+    "nodes": {
+      "pareto-anywhere-socketio": "socketio/paretoanywhere.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reelyactive/node-red-pareto-anywhere.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reelyactive/node-red-pareto-anywhere/issues"
+  },
+  "contributors": [
+    { "name": "Jeffrey Dungen" }
+  ],
+  "license": "MIT"
+}
