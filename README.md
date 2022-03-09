@@ -3,6 +3,8 @@ node-red-pareto-anywhere
 
 Access real-time data from [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) in [Node-RED](https://nodered.org/).
 
+![Pareto Anywhere screenshot in Node-RED](https://reelyactive.github.io/node-red-pareto-anywhere/images/socketio-screenshot.png)
+
 
 Contributing
 ------------
