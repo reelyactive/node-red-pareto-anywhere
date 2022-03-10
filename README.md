@@ -1,9 +1,35 @@
 node-red-pareto-anywhere
 ========================
 
-Access real-time data from [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) in [Node-RED](https://nodered.org/).
+Prototype event-driven applications for context-aware physical spaces with [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) in [Node-RED](https://nodered.org/).
 
 ![Pareto Anywhere screenshot in Node-RED](https://reelyactive.github.io/node-red-pareto-anywhere/images/socketio-screenshot.png)
+
+
+Installation
+------------
+
+Install __@reelyactive/node-red-pareto-anywhere__ from the [Palette Manager](https://nodered.org/docs/user-guide/editor/palette/manager) in Node-RED.  A __pareto-anywhere-socketio__ node will become available.
+
+
+Configuration
+-------------
+
+In the case where Node-RED and Pareto Anywhere are running locally on the same machine, zero configuration is required: the __pareto-anywhere-socketio__ node will attempt to connect via Socket.IO to a Pareto Anywhere instance running at the default [localhost:3001](http://localhost:3001).
+
+In the case where Pareto Anywhere is running remotely, edit the _Socket.IO URL_ in the __pareto-anywhere-socketio__ node properties (ex: http://192.168.0.123:3001).
+
+
+Data Manipulation
+-----------------
+
+The __pareto-anywhere-socketio__ node provides two real-time outputs:
+- raddec (RADio DECoding)
+- dynamb (DYNamic AMBient data)
+
+The [raddec](https://github.com/reelyactive/raddec/) stream is typically used for real-time location applications (i.e. who/what is _where?_)
+
+The dynamb stream observes [these standard properties](https://github.com/reelyactive/advlib/#standard-properties) is typically used for timeseries and event-driven applications (i.e. who/what is _how?_)
 
 
 Contributing

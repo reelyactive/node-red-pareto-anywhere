@@ -5,11 +5,11 @@
     "name": "reelyActive",
     "email": "info@reelyactive.com"
   },
-  "description": "Access real-time data from Pareto Anywhere in Node-RED",
+  "description": "Prototype event-driven applications for context-aware physical spaces with Pareto Anywhere in Node-RED",
   "dependencies": {
     "socket.io-client": "^4.4.1"
   },
-  "keywords": [ "node-red" ],
+  "keywords": [ "node-red", "pareto-anywhere", "RTLS" ],
   "version": "0.1.0",
   "node-red": {
     "nodes": {
