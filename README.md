@@ -31,6 +31,8 @@ The [raddec](https://github.com/reelyactive/raddec/) stream is typically used fo
 
 The dynamb stream observes [these standard properties](https://github.com/reelyactive/advlib/#standard-properties) is typically used for timeseries and event-driven applications (i.e. who/what is _how?_)
 
+See the [reelyActive Developer's Cheatsheet](https://reelyactive.github.io/diy/cheatsheet/) to learn "owl" about the __raddec__ and __dynamb__ JSON data structures.
+
 
 Contributing
 ------------
