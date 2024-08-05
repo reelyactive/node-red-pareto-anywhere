@@ -5,12 +5,12 @@
     "name": "reelyActive",
     "email": "info@reelyactive.com"
   },
-  "description": "Prototype event-driven applications for context-aware physical spaces with Pareto Anywhere in Node-RED",
+  "description": "Prototype event-driven applications with Pareto Anywhere open source IoT middleware in Node-RED",
   "dependencies": {
-    "socket.io-client": "^4.4.1"
+    "socket.io-client": "^4.7.5"
   },
   "keywords": [ "node-red", "pareto-anywhere", "RTLS" ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "node-red": {
     "nodes": {
       "pareto-anywhere-socketio": "socketio/paretoanywhere.js"
