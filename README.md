@@ -1,7 +1,7 @@
 node-red-pareto-anywhere
 ========================
 
-Prototype event-driven applications for context-aware physical spaces with [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) in [Node-RED](https://nodered.org/).
+Prototype event-driven applications with [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source IoT middleware in [Node-RED](https://nodered.org/).
 
 ![Pareto Anywhere screenshot in Node-RED](https://reelyactive.github.io/node-red-pareto-anywhere/images/socketio-screenshot.png)
 
