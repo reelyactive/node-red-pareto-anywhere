@@ -17,10 +17,13 @@ module.exports = function(RED) {
 
     node.socket.on('connect', () => { node.status(STATUS_CONNECT); });
     node.socket.on('raddec', (raddec) => {
-      node.send([ { payload: raddec }, null ]);
+      node.send([ { payload: raddec }, null, null ]);
     });
     node.socket.on('dynamb', (dynamb) => {
-      node.send([ null, { payload: dynamb } ]);
+      node.send([ null, { payload: dynamb }, null ]);
+    });
+    node.socket.on('spatem', (spatem) => {
+      node.send([ null, null, { payload: spatem } ]);
     });
     node.socket.on('connect_error', (err) => {
       node.status(STATUS_CONNECT_ERROR);
