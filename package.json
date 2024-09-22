@@ -7,10 +7,10 @@
   },
   "description": "Prototype event-driven applications with Pareto Anywhere open source IoT middleware in Node-RED",
   "dependencies": {
-    "socket.io-client": "^4.7.5"
+    "socket.io-client": "^4.8.0"
   },
-  "keywords": [ "node-red", "pareto-anywhere", "RTLS" ],
-  "version": "0.1.2",
+  "keywords": [ "node-red", "pareto-anywhere", "IoT", "RTLS" ],
+  "version": "0.2.0",
   "node-red": {
     "nodes": {
       "pareto-anywhere-socketio": "socketio/paretoanywhere.js"
