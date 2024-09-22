@@ -1,0 +1,101 @@
+[
+    {
+        "id": "1043a1fd8f3dfcc3",
+        "type": "tab",
+        "label": "Hello Pareto Anywhere!",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "196d8fa6af0aa9f0",
+        "type": "pareto-anywhere-socketio",
+        "z": "1043a1fd8f3dfcc3",
+        "uri": "http://localhost:3001",
+        "name": "",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "c6c1a25a1163b56f"
+            ],
+            [
+                "5dc81b82a021560d"
+            ],
+            [
+                "dcb0f1b34da99db9"
+            ]
+        ]
+    },
+    {
+        "id": "c6c1a25a1163b56f",
+        "type": "debug",
+        "z": "1043a1fd8f3dfcc3",
+        "name": "raddec",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5dc81b82a021560d",
+        "type": "debug",
+        "z": "1043a1fd8f3dfcc3",
+        "name": "dynamb",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dcb0f1b34da99db9",
+        "type": "debug",
+        "z": "1043a1fd8f3dfcc3",
+        "name": "spatem",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "877d953040996867",
+        "type": "comment",
+        "z": "1043a1fd8f3dfcc3",
+        "name": "Connects via Socket.IO to Pareto Anywhere on localhost:3001",
+        "info": "",
+        "x": 240,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2882052453e32cd6",
+        "type": "comment",
+        "z": "1043a1fd8f3dfcc3",
+        "name": "Observe JSON data in the debug messages tab",
+        "info": "",
+        "x": 200,
+        "y": 240,
+        "wires": []
+    }
+]

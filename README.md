@@ -35,6 +35,14 @@ The dynamb stream observes [these standard properties](https://github.com/reelya
 See the [reelyActive Developer's Cheatsheet](https://reelyactive.github.io/diy/cheatsheet/) to learn "owl" about the __raddec__, __dynamb__ and __spatem__ JSON data structures.
 
 
+Examples
+--------
+
+__node-red-pareto-anywhere__ includes examples which facilitate getting up and running quickly.  Import (<kbd>Ctrl</kbd> + <kbd>i</kbd>) and select Examples, then expand the __@reelyactive/node-red-pareto-anywhere__ folder to choose from the following examples:
+
+![Import Pareto Anywhere examples in Node-RED](https://reelyactive.github.io/node-red-pareto-anywhere/images/import-examples.png)
+
+
 Contributing
 ------------
 
