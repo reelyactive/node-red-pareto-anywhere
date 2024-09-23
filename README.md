@@ -42,6 +42,15 @@ __node-red-pareto-anywhere__ includes examples which facilitate getting up and r
 
 ![Import Pareto Anywhere examples in Node-RED](https://reelyactive.github.io/node-red-pareto-anywhere/images/import-examples.png)
 
+### Socket.IO Examples
+
+| Example                    | Tutorial | 
+|:---------------------------|:---------|
+| SocketIO-Hello             | n/a      |
+| SocketIO-Espruino-PuckJS   | [Puck.js Development Guide](https://reelyactive.github.io/diy/puckjs-dev/) |
+| SocketIO-Minew-MSP01       | [Configure a Minew MSP01 PIR Sensor](https://reelyactive.github.io/diy/minew-msp01-config/) |
+| SocketIO-Minew-B10         | [Configure a Minew B10 Wristband](https://reelyactive.github.io/diy/minew-b10-config/) |
+
 
 Contributing
 ------------
