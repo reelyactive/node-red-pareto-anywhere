@@ -29,6 +29,8 @@ To filter on a specific device, enter the __id__ of the device as a hexadecimal 
 
 ![Pareto Anywhere Node-RED filter on specific device](https://reelyactive.github.io/node-red-pareto-anywhere/images/configuration-specific-device.png)
 
+The identifier of a device can often be found printed on the device itself.  Otherwise, lookup the __id__/__idType__ from the [Pareto Anywhere Apps](https://reelyactive.github.io/pareto-anywhere-apps/) and/or APIs.
+
 
 Data Manipulation
 -----------------
