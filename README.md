@@ -19,6 +19,16 @@ In the case where Node-RED and Pareto Anywhere are running locally on the same m
 
 In the case where Pareto Anywhere is running remotely, edit the _URI_ in the __pareto-anywhere-socketio__ node properties (ex: http://192.168.0.123:3001).
 
+![Pareto Anywhere Node-RED configuration](https://reelyactive.github.io/node-red-pareto-anywhere/images/configuration-all-devices.png)
+
+Leaving the __id__ field blank will disable filtering, and data from _all_ devices will be available as output.
+
+### Filter on specific device
+
+To filter on a specific device, enter the __id__ of the device as a hexadecimal string and select the __idType__ from the pull-down.
+
+![Pareto Anywhere Node-RED filter on specific device](https://reelyactive.github.io/node-red-pareto-anywhere/images/configuration-specific-device.png)
+
 
 Data Manipulation
 -----------------
