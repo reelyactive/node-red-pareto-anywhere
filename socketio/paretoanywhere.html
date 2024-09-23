@@ -4,15 +4,35 @@
     color: "#83b7d0",
     defaults: {
       uri: { value: "http://localhost:3001", required: true },
+      deviceid: { value: "", required: false,
+                  validate:RED.validators.regex(/^[a-fA-F0-9]+$/) },
+      deviceidtype: { value: 0 },
       name: { value: "" }
     },
     inputs: 0,
     outputs: 3,
     icon: "bridge.svg",
-    label: function() {
-      return this.name || 'Pareto Anywhere';
+    label: function() { return this.name || 'Pareto Anywhere'; },
+    outputLabels: [ 'raddec', 'dynamb', 'spatem' ],
+    oneditprepare: function() {
+      $("#node-input-deviceidtype").typedInput({
+        types: [
+          {
+            value: "deviceidtype",
+            options: [
+              { value: 0, label: "0: Unknown" },
+              { value: 1, label: "1: EUI-64" },
+              { value: 2, label: "2: EUI-48" },
+              { value: 3, label: "3: RND-48" },
+              { value: 4, label: "4: TID-96" },
+              { value: 5, label: "5: EPC-96" },
+              { value: 6, label: "6: UUID-128" },
+              { value: 7, label: "7: EURID-32" },
+            ]
+          }
+        ]
+      })
     },
-    outputLabels: [ 'raddec', 'dynamb', 'spatem' ]
   });
 </script>
 
@@ -21,12 +41,23 @@
     <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Pareto Anywhere">
   </div>
+  <h3> <i class="fa fa-link"></i> Pareto Anywhere URI <em>(Required)</em> </h3>
+  <p> Leave the URI as http://localhost:3001 for a Pareto Anywhere instance running on the same machine, with default settings. </p>
   <div class="form-row">
-    <label for="node-input-uri"><i class="fa fa-link"></i> Socket.IO URI</label>
+    <label for="node-input-uri"><i class="fa fa-link"></i> URI</label>
     <input type="url" id="node-input-uri" placeholder="http://localhost:3001">
-    <div class="form-text"> Observe <em>all</em> devices with the base route (ex: http://localhost:3001) </div>
-    <div class="form-text"> Observe a <em>specific</em> device with the devices route (ex: http://localhost:3001/devices/aabbccddeeff/2) </div>
   </div>
+  <h3> <i class="fa fa-filter"></i> Filter on specific device <em>(Optional)</em> </h3>
+  <p> Leave the id field blank to disable filtering and collect data from <em>all</em> devices. </p>
+  <div class="form-row">
+    <label for="node-input-deviceid"><i class="fa fa-barcode"></i> id</label>
+    <input type="text" id="node-input-deviceid">
+  </div>
+  <div class="form-row">
+    <label for="node-input-deviceidtype"><i class="fa fa-barcode"></i> idType</label>
+    <input type="text" id="node-input-deviceidtype">
+  </div>
+  <p> If filtering is enabled, /devices/[deviceId]/[deviceIdType] will be appended to the Pareto Anywhere URI specified above. </p>
 </script>
 
 <script type="text/html" data-help-name="pareto-anywhere-socketio">

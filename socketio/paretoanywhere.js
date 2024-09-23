@@ -11,9 +11,16 @@ module.exports = function(RED) {
   function SocketIONode(config) {
     RED.nodes.createNode(this, config);
     this.uri = config.uri;
+    this.deviceid = config.deviceid;
+    this.deviceidtype = config.deviceidtype;
     let node = this;
 
-    node.socket = io(node.uri || DEFAULT_SOCKET_URI);
+    node.socketUri = node.uri || DEFAULT_SOCKET_URI;
+    if((typeof node.deviceid === 'string') && (node.deviceid.length > 0)) {
+      node.socketUri += '/devices/' + node.deviceid + '/' + node.deviceidtype;
+    }
+
+    node.socket = io(node.socketUri);
 
     node.socket.on('connect', () => { node.status(STATUS_CONNECT); });
     node.socket.on('raddec', (raddec) => {
@@ -27,7 +34,7 @@ module.exports = function(RED) {
     });
     node.socket.on('connect_error', (err) => {
       node.status(STATUS_CONNECT_ERROR);
-      node.error('Error connecting to Socket.IO server at ' + node.uri);
+      node.error('Error connecting to Socket.IO server at ' + node.socketUri);
     });
     node.socket.on('disconnect', () => { node.status(STATUS_DISCONNECT); });
 
