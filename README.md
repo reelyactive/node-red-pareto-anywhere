@@ -17,7 +17,7 @@ Configuration
 
 In the case where Node-RED and Pareto Anywhere are running locally on the same machine, zero configuration is required: the __pareto-anywhere-socketio__ node will attempt to connect via Socket.IO to a Pareto Anywhere instance running at the default [localhost:3001](http://localhost:3001).
 
-In the case where Pareto Anywhere is running remotely, edit the _Socket.IO URL_ in the __pareto-anywhere-socketio__ node properties (ex: http://192.168.0.123:3001).
+In the case where Pareto Anywhere is running remotely, edit the _URI_ in the __pareto-anywhere-socketio__ node properties (ex: http://192.168.0.123:3001).
 
 
 Data Manipulation
