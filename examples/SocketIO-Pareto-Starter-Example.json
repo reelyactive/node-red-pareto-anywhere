@@ -1,0 +1,528 @@
+[
+    {
+        "id": "943e204f81529182",
+        "type": "tab",
+        "label": "BLE in with Pareto Anywhere",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "57c7f54bd83b1b4a",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This flow Runs on IoT Sandbox, with ParetoAnywhere Installed",
+        "info": "This machine needs to have ParetoAnywhere installed.",
+        "x": 250,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "41759bd8c50d792e",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "When creating new BLE messages, use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
+        "info": "",
+        "x": 450,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d146a7173562aeb7",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This flow uses the ParetoAnywhere software to access Bluetooth Low-energy device information",
+        "info": "",
+        "x": 350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "90f2368be6a4ce23",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "You can access the Pareto Anywhere Apps here to see more device information: http://[THIS_MACHINE_IP]:3001/",
+        "info": "http://192.168.73.88:3001/",
+        "x": 410,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "04f831fe0aab37c7",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
+        "x": 150,
+        "y": 700,
+        "wires": [
+            [],
+            [
+                "f885eac3693ca6f6",
+                "a77a28489a869ede"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7f94a81d044b45c7",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Capturing all devices and saving their info, for the dashboard",
+        "info": "",
+        "x": 280,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "f885eac3693ca6f6",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to allBLE",
+        "func": "let allBLE = global.get(\"allBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nif(allBLE[msg.payload.deviceId]){\n    // merge w existing.\n    Object.assign(allBLE[msg.payload.deviceId], msg.payload);\n}else{\n    allBLE[msg.payload.deviceId] = msg.payload;\n}\nglobal.set(\"allBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a77a28489a869ede",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 45",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "58c83c34488e0d02",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "You can also use the \"BLE Devices\" page in the Node-red Dashboard to see what BLE devices ParetoAnywhere sees",
+        "info": "",
+        "x": 420,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "dfa6f8ae37760595",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "CreateHTMLTableFromJSON",
+        "func": "const checkIfObjectOrArray = (value) =>  (\n    Object.prototype.toString.call(value) === '[object Array]'\n    || Object.prototype.toString.call(value) === '[object Object]'\n);\n\nconst isString = (value) => (typeof value === 'string' || value instanceof String);\n\nconst createTable = (json) => {\n    \n    const tableData = Object.keys(json).map((key) => {\n        \n        const createNewTableIfObjectOrArray = (value) => {\n\n            if(checkIfObjectOrArray(value)) {\n                return `\n                    <tr>\n                        <td>${key}</td>\n                        <td>\n                            <span class=\"expandButton expanded\">-</span>\n                            ${createTable(value)}\n                        </td>\n                    </tr>\n                `;\n            } \n            \n            return `\n                <tr>\n                    <td>${key}</td>\n                    <td class=\"endValue ${(isString(json[key]) ? 'string' : 'notString')}\">${json[key]}</td>\n                </tr>\n            `;\n        }\n        \n        return createNewTableIfObjectOrArray(json[key]);\n    });\n    \n    return `\n        <table class=\"table-collapse\">\n            <tbody>${tableData.join('')}</tbody>\n        </table>\n    `;\n}\n\nmsg.payload = `\n<div class=\"tableContainer\">\n    ${createTable(msg.payload)}\n</div>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 860,
+        "wires": [
+            [
+                "e2bc8730ca71a33d"
+            ]
+        ]
+    },
+    {
+        "id": "e2bc8730ca71a33d",
+        "type": "ui_template",
+        "z": "943e204f81529182",
+        "group": "f8acfcf9bb97cb20",
+        "name": "Untracked BLE Devices",
+        "order": 0,
+        "width": "11",
+        "height": "15",
+        "format": "<style>\n    div.tableContainer {\n        display: flex;\n        flex-direction: column;\n        word-wrap: break-word;\n        background-color: #303030;\n        border: 1px solid rgba(0,0,0,0.125);\n        border-radius: 0.25rem;\n        color: white;\n        font-size: 0.75rem;\n    }\n    \n    .table-collapse {\n        border-collapse: collapse;\n        border-spacing: 0;\n        display: flex;\n        height:100%;\n        flex: 0 0 auto;\n        transition: all 0.5s ease-in-out;\n    }\n    \n    .tableContainer table tbody {\n        border-collapse: collapse !important;\n        border: solid #B5B5B5 1px;\n        border-radius: 3px;\n        display: table-row-group;\n        vertical-align: middle;\n        border-color: inherit;\n    }\n    \n    .tableContainer table tr {\n        font-weight: bold;\n        border: none;\n    }\n    \n    .tableContainer table td {\n        vertical-align: top;\n        border: 1px solid #636363;\n        padding: 3px 10px 3px 10px;\n        white-space: nowrap;\n    }\n    \n    .endValue {\n        font-weight: initial;\n    }\n    \n    .expandButton {\n        font-size: 1.5rem;\n        cursor: pointer;\n    }\n    \n    .hidden {\n        height: 0;\n        max-height: 0;\n        opacity: 0;\n        overflow: hidden;\n    }\n    \n    .string {\n        color: rgb(155 185 91);\n    }\n    \n    .notString {\n        color: rgb(101 142 177);\n    }\n</style>\n<script>\nwindow.addEventListener('click', (e) => {\n    if (e.target.classList.contains('expandButton')) {\n        if (e.target.classList.contains('expanded')) {\n            e.target.innerHTML = '+';\n            e.target.classList.toggle(\"expanded\", false);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", true);\n        } else {\n            e.target.innerHTML = '-';\n            e.target.classList.toggle(\"expanded\", true);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", false);\n        }\n    }\n});\n</script>\n\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 850,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b634a06d2f1cf975",
+        "type": "inject",
+        "z": "943e204f81529182",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"squadName\":\"Super hero squad\",\"homeTown\":\"Metro City\",\"formed\":2016,\"secretBase\":\"Super tower\",\"active\":true,\"members\":[{\"index\":0,\"isActive\":false,\"age\":21,\"eyeColor\":\"blue\",\"name\":\"Bentley Clayton\",\"gender\":\"male\",\"registered\":\"2018-05-02T05:35:41 +04:00\"},{\"index\":1,\"isActive\":false,\"age\":23,\"eyeColor\":\"blue\",\"name\":\"Lela Ramos\",\"gender\":\"female\",\"registered\":\"2014-02-24T03:13:50 +05:00\"},{\"index\":2,\"isActive\":true,\"age\":38,\"eyeColor\":\"green\",\"name\":\"Milagros Becker\",\"gender\":\"female\",\"registered\":\"2016-10-22T12:18:50 +04:00\"},{\"index\":3,\"isActive\":false,\"age\":30,\"eyeColor\":\"brown\",\"name\":\"Mccoy Barrera\",\"gender\":\"male\",\"registered\":\"2016-12-03T03:44:57 +05:00\"},{\"index\":4,\"isActive\":false,\"age\":35,\"eyeColor\":\"brown\",\"name\":\"Morton Bennett\",\"gender\":\"male\",\"registered\":\"2015-10-06T09:48:03 +04:00\"},{\"index\":5,\"isActive\":true,\"age\":20,\"eyeColor\":\"blue\",\"name\":\"Acosta Bird\",\"gender\":\"male\",\"registered\":\"2019-02-11T09:59:58 +05:00\"},{\"index\":6,\"isActive\":false,\"age\":35,\"eyeColor\":\"blue\",\"name\":\"Mcleod Keith\",\"gender\":\"male\",\"registered\":\"2014-04-24T07:50:11 +04:00\"},{\"index\":7,\"isActive\":false,\"age\":27,\"eyeColor\":\"brown\",\"name\":\"Magdalena Burgess\",\"gender\":\"female\",\"registered\":\"2015-03-19T09:28:55 +04:00\"},{\"index\":8,\"isActive\":false,\"age\":37,\"eyeColor\":\"blue\",\"name\":\"Cline Castaneda\",\"gender\":\"male\",\"registered\":\"2016-02-29T09:49:37 +05:00\"},{\"index\":9,\"isActive\":false,\"age\":39,\"eyeColor\":\"green\",\"name\":\"Garcia Baker\",\"gender\":\"male\",\"registered\":\"2018-05-26T02:54:22 +04:00\"},{\"index\":10,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Lenora Keller\",\"gender\":\"female\",\"registered\":\"2017-12-19T05:12:17 +05:00\"},{\"index\":11,\"isActive\":false,\"age\":33,\"eyeColor\":\"green\",\"name\":\"Kathryn Donovan\",\"gender\":\"female\",\"registered\":\"2014-03-21T12:33:36 +04:00\"},{\"index\":12,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Opal Hinton\",\"gender\":\"female\",\"registered\":\"2014-05-03T02:14:25 +04:00\"},{\"index\":13,\"isActive\":false,\"age\":25,\"eyeColor\":\"green\",\"name\":\"Mayer Gray\",\"gender\":\"male\",\"registered\":\"2016-04-01T05:52:21 +04:00\"},{\"index\":14,\"isActive\":true,\"age\":22,\"eyeColor\":\"green\",\"name\":\"Josefina Quinn\",\"gender\":\"female\",\"registered\":\"2015-02-07T12:04:14 +05:00\"}]}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 860,
+        "wires": [
+            [
+                "f85b67c47aaa8f66",
+                "ae5170c07ec77cea"
+            ]
+        ]
+    },
+    {
+        "id": "f85b67c47aaa8f66",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "getUNCapturedBLE",
+        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nif(!all){\n    all = {};\n    global.set(\"allBLE\", all);\n}\nif(!captured){\n    captured = {};\n    global.set(\"capturedBLE\", captured);\n}\n\nlet allKeys = Object.keys(all);\nlet capturedKeys = Object.keys(captured);\n\nnode.warn(capturedKeys);\n\nlet uncaptured = {};\n\nfor(let i = 0; i < allKeys.length; i++){\n   let key = allKeys[i];\n    if(!capturedKeys.includes(key)){\n        uncaptured[key] = all[key];\n    }\n}\n\nmsg = {payload: uncaptured};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 860,
+        "wires": [
+            [
+                "dfa6f8ae37760595"
+            ]
+        ]
+    },
+    {
+        "id": "143b391abf3537cd",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This creates a tab of all UNTRACKED BLE devices",
+        "info": "",
+        "x": 250,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "b69ad0e26cb75345",
+        "type": "ui_template",
+        "z": "943e204f81529182",
+        "group": "f85a84fa1aa251ff",
+        "name": "Tracked BLE Devices",
+        "order": 0,
+        "width": "11",
+        "height": "15",
+        "format": "<style>\n    div.tableContainer {\n        display: flex;\n        flex-direction: column;\n        word-wrap: break-word;\n        background-color: #303030;\n        border: 1px solid rgba(0,0,0,0.125);\n        border-radius: 0.25rem;\n        color: white;\n        font-size: 0.75rem;\n    }\n    \n    .table-collapse {\n        border-collapse: collapse;\n        border-spacing: 0;\n        display: flex;\n        height:100%;\n        flex: 0 0 auto;\n        transition: all 0.5s ease-in-out;\n    }\n    \n    .tableContainer table tbody {\n        border-collapse: collapse !important;\n        border: solid #B5B5B5 1px;\n        border-radius: 3px;\n        display: table-row-group;\n        vertical-align: middle;\n        border-color: inherit;\n    }\n    \n    .tableContainer table tr {\n        font-weight: bold;\n        border: none;\n    }\n    \n    .tableContainer table td {\n        vertical-align: top;\n        border: 1px solid #636363;\n        padding: 3px 10px 3px 10px;\n        white-space: nowrap;\n    }\n    \n    .endValue {\n        font-weight: initial;\n    }\n    \n    .expandButton {\n        font-size: 1.5rem;\n        cursor: pointer;\n    }\n    \n    .hidden {\n        height: 0;\n        max-height: 0;\n        opacity: 0;\n        overflow: hidden;\n    }\n    \n    .string {\n        color: rgb(155 185 91);\n    }\n    \n    .notString {\n        color: rgb(101 142 177);\n    }\n</style>\n<script>\nwindow.addEventListener('click', (e) => {\n    if (e.target.classList.contains('expandButton')) {\n        if (e.target.classList.contains('expanded')) {\n            e.target.innerHTML = '+';\n            e.target.classList.toggle(\"expanded\", false);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", true);\n        } else {\n            e.target.innerHTML = '-';\n            e.target.classList.toggle(\"expanded\", true);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", false);\n        }\n    }\n});\n</script>\n\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 840,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95ef3439c8d6162c",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "CreateHTMLTableFromJSON",
+        "func": "const checkIfObjectOrArray = (value) =>  (\n    Object.prototype.toString.call(value) === '[object Array]'\n    || Object.prototype.toString.call(value) === '[object Object]'\n);\n\nconst isString = (value) => (typeof value === 'string' || value instanceof String);\n\nconst createTable = (json) => {\n    \n    const tableData = Object.keys(json).map((key) => {\n        \n        const createNewTableIfObjectOrArray = (value) => {\n\n            if(checkIfObjectOrArray(value)) {\n                return `\n                    <tr>\n                        <td>${key}</td>\n                        <td>\n                            <span class=\"expandButton expanded\">-</span>\n                            ${createTable(value)}\n                        </td>\n                    </tr>\n                `;\n            } \n            \n            return `\n                <tr>\n                    <td>${key}</td>\n                    <td class=\"endValue ${(isString(json[key]) ? 'string' : 'notString')}\">${json[key]}</td>\n                </tr>\n            `;\n        }\n        \n        return createNewTableIfObjectOrArray(json[key]);\n    });\n    \n    return `\n        <table class=\"table-collapse\">\n            <tbody>${tableData.join('')}</tbody>\n        </table>\n    `;\n}\n\nmsg.payload = `\n<div class=\"tableContainer\">\n    ${createTable(msg.payload)}\n</div>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 960,
+        "wires": [
+            [
+                "b69ad0e26cb75345"
+            ]
+        ]
+    },
+    {
+        "id": "ae5170c07ec77cea",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "getCapturedBLE",
+        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nmsg = { payload: captured };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 960,
+        "wires": [
+            [
+                "95ef3439c8d6162c"
+            ]
+        ]
+    },
+    {
+        "id": "1dc171f7dbaebfbd",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This creates a tab of all UNTRACKED BLE devices",
+        "info": "",
+        "x": 250,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "cd25d0e6559210b2",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "the \"BLE Devices\" tab in the dashboard shows you which devices you're tracking, and which ones Pareto sees but you haven't tracked yet",
+        "info": "",
+        "x": 520,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "fd8072474a0cb7cd",
+        "type": "red-advlib-ble",
+        "z": "943e204f81529182",
+        "name": "",
+        "ignoreProtocolOverheadCheckbox": false,
+        "x": 1060,
+        "y": 500,
+        "wires": [
+            [
+                "cf2259b44c6db0e5"
+            ]
+        ]
+    },
+    {
+        "id": "c2894d8c81135ed7",
+        "type": "split",
+        "z": "943e204f81529182",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "data",
+        "property": "payload.packets",
+        "x": 310,
+        "y": 500,
+        "wires": [
+            [
+                "c2ad694c85e570b3",
+                "0970b33e6d276c43"
+            ]
+        ]
+    },
+    {
+        "id": "c2ad694c85e570b3",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 41",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "cf2259b44c6db0e5",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 42",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d9d4dd74cbc4f92b",
+        "type": "change",
+        "z": "943e204f81529182",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload.packets",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 500,
+        "wires": [
+            [
+                "fd8072474a0cb7cd"
+            ]
+        ]
+    },
+    {
+        "id": "3e4804814a47f650",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This little bit is useful for debugging, for seeing all the data that pareto is getting, even if it's not decoded yet.",
+        "info": "",
+        "x": 430,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "c603f295d4d12744",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8cb5b186d5396c5a",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Connect Pareto top output to Split to get it going....",
+        "info": "",
+        "x": 250,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0970b33e6d276c43",
+        "type": "switch",
+        "z": "943e204f81529182",
+        "name": "Looking for a particular device ID",
+        "property": "payload.transmitterId",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "e76432071406",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 500,
+        "wires": [
+            [
+                "d9d4dd74cbc4f92b"
+            ]
+        ]
+    },
+    {
+        "id": "8c57aa949ac33da3",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "UI at http://[THIS_MACHINE_IP]:1880/ui",
+        "info": "",
+        "x": 1000,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cfc1a391de90d4b5",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Each tab to the right is a sample for access data from a different paret-compatible device. Take a look!",
+        "info": "",
+        "x": 370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "df890896043ea8c2",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This part below helps us buld out the UI of known and unknown devices",
+        "info": "",
+        "x": 320,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "cc3d77d60a335501",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This flow repo at: https://github.com/donundeen/ParetoNodeRED",
+        "info": "",
+        "x": 770,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f8acfcf9bb97cb20",
+        "type": "ui_group",
+        "name": "Untracked BLE Devices",
+        "tab": "fb202f2b9c4ea98f",
+        "order": 1,
+        "disp": true,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f85a84fa1aa251ff",
+        "type": "ui_group",
+        "name": "Tracked BLE Devices",
+        "tab": "fb202f2b9c4ea98f",
+        "order": 2,
+        "disp": true,
+        "width": "11",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fb202f2b9c4ea98f",
+        "type": "ui_tab",
+        "name": "BLE Devices",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
