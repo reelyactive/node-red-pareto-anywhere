@@ -1,0 +1,1250 @@
+[
+    {
+        "id": "7f99695c21df75f9",
+        "type": "tab",
+        "label": "MINEW MSP01",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "86082d1415efdb4f",
+        "type": "pareto-anywhere-socketio",
+        "z": "7f99695c21df75f9",
+        "uri": "http://localhost:3001/devices/c300000ae8da/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "c66d64bcf70f9bc7",
+                "60ec971d4695fca9",
+                "e3c2fba6f771e843",
+                "581f3997efeaa1bb",
+                "6a95d26c87c505aa",
+                "bd3dd667fb83d49e",
+                "731dcb95e56f33e7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "44706c292c21ec60",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/isMotionDetected",
+        "func": "let newmsg = {topic: \"/motionE8DA/isMotionDetected\",\n            payload: msg.payload.isMotionDetected[0]};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 200,
+        "wires": [
+            [
+                "962d6d7cc3125785"
+            ]
+        ]
+    },
+    {
+        "id": "7b9d50f826cbaa56",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Open the ParetoAnywhere Object to set a Device URI",
+        "info": "",
+        "x": 240,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4931fc420d93091d",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "create a friendly topic name, and assign the payload here",
+        "info": "",
+        "x": 1170,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "49e27c500a21e74a",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1970,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "88dea25fe3f80940",
+        "type": "link out",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/isMotionDetected",
+        "mode": "link",
+        "links": [
+            "7f48796d223aff6d",
+            "8fabfcd6e00bb298",
+            "da9387dc2680a057",
+            "a6d379a11de955f8"
+        ],
+        "x": 1655,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "445f9fa6cddab39e",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/isMotionDetected",
+        "info": "",
+        "x": 1810,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "83076743d6a06913",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/devices/c300000ae8da/3",
+        "info": "",
+        "x": 160,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "79c029fd70a44f6d",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 760,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0b646b253e628020",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 700,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c66d64bcf70f9bc7",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "is it isMotionDetected",
+        "func": "if(msg.payload.isMotionDetected){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "44706c292c21ec60"
+            ]
+        ]
+    },
+    {
+        "id": "99e5ad2b40116bcb",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/temperature",
+        "func": "let newmsg = {topic: \"/motionE8DA/temperature\",\n            payload: msg.payload.temperature};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 300,
+        "wires": [
+            [
+                "92dfb41f68deaca5"
+            ]
+        ]
+    },
+    {
+        "id": "72598cf98a406544",
+        "type": "link out",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/temperature",
+        "mode": "link",
+        "links": [
+            "7ef475ffc039806f",
+            "30c63c537e502a94",
+            "622bf26b87eb3ed9",
+            "c534c42889ea8a46",
+            "a3dd92f8f3bbd818",
+            "2af44edb76086223"
+        ],
+        "x": 1655,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f6a284e5f4012c46",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/temperature",
+        "info": "",
+        "x": 1790,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "60ec971d4695fca9",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "is it temperature?",
+        "func": "if(msg.payload.temperature){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "99e5ad2b40116bcb"
+            ]
+        ]
+    },
+    {
+        "id": "31722eca1240b99b",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/illuminance",
+        "func": "let newmsg = {topic: \"/motionE8DA/illuminance\",\n            payload: msg.payload.illuminance};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 360,
+        "wires": [
+            [
+                "f0e83203fd47bf24"
+            ]
+        ]
+    },
+    {
+        "id": "4864450132a89ec0",
+        "type": "link out",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/illuminance",
+        "mode": "link",
+        "links": [
+            "15f03384138c7a9b",
+            "c1d1dfc74b17a671",
+            "bb6d81d93e1ad55a"
+        ],
+        "x": 1655,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "2f7fbbaf63348d38",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/illuminance",
+        "info": "",
+        "x": 1790,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e3c2fba6f771e843",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "is it illuminance?",
+        "func": "if(msg.payload.illuminance){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 360,
+        "wires": [
+            [
+                "31722eca1240b99b"
+            ]
+        ]
+    },
+    {
+        "id": "bef0d88ada146ed2",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/acceleration",
+        "func": "let newmsg = {topic: \"/motionE8DA/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 420,
+        "wires": [
+            [
+                "baced045676a50d4"
+            ]
+        ]
+    },
+    {
+        "id": "fde36388a3200a3e",
+        "type": "link out",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/acceleration",
+        "mode": "link",
+        "links": [
+            "b435851896189b4c",
+            "34179481a9d37d57",
+            "71ebe495c61eccb3"
+        ],
+        "x": 1655,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "796bb1fc50d6c5ec",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/acceleration",
+        "info": "",
+        "x": 1790,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "581f3997efeaa1bb",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "is it acceleration?",
+        "func": "if(msg.payload.acceleration){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 420,
+        "wires": [
+            [
+                "bef0d88ada146ed2"
+            ]
+        ]
+    },
+    {
+        "id": "1972f1375cd7c163",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/batteryPercentage",
+        "func": "let newmsg = {topic: \"/motionE8DA/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 480,
+        "wires": [
+            [
+                "f3024c7ffe435c17"
+            ]
+        ]
+    },
+    {
+        "id": "18ed9d4014b20f54",
+        "type": "link out",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/batteryPercentage",
+        "mode": "link",
+        "links": [
+            "0e67c49a5c1dbc69",
+            "92148f9250905b6b",
+            "fddd5d157b9b8608"
+        ],
+        "x": 1655,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "64bb27a97d0e46fc",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/batteryPercentage",
+        "info": "",
+        "x": 1810,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6a95d26c87c505aa",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "is it batteryPercentage?",
+        "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 480,
+        "wires": [
+            [
+                "1972f1375cd7c163"
+            ]
+        ]
+    },
+    {
+        "id": "43e0590993efdfad",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/relativeHumidity",
+        "func": "let newmsg = {\n    topic: \"/motionE8DA/relativeHumidity\",\n    payload: msg.payload.relativeHumidity\n};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 540,
+        "wires": [
+            [
+                "96cb8985529e9a38"
+            ]
+        ]
+    },
+    {
+        "id": "6975ec2ccb7fc343",
+        "type": "link out",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/relativeHumidity",
+        "mode": "link",
+        "links": [
+            "61fe7ef84007a447",
+            "10d09e9ebbae4a39",
+            "71d0ac9efc87d2d0"
+        ],
+        "x": 1655,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "238fd2d0b25e3b74",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/relativeHumidity",
+        "info": "",
+        "x": 1800,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "bd3dd667fb83d49e",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "is it relativeHumidity?",
+        "func": "if (msg.payload.relativeHumidity){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 540,
+        "wires": [
+            [
+                "43e0590993efdfad"
+            ]
+        ]
+    },
+    {
+        "id": "34e06137c8e9a221",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
+        "info": "",
+        "x": 380,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "962d6d7cc3125785",
+        "type": "rbe",
+        "z": "7f99695c21df75f9",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1520,
+        "y": 200,
+        "wires": [
+            [
+                "88dea25fe3f80940"
+            ]
+        ]
+    },
+    {
+        "id": "92dfb41f68deaca5",
+        "type": "rbe",
+        "z": "7f99695c21df75f9",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1520,
+        "y": 300,
+        "wires": [
+            [
+                "72598cf98a406544"
+            ]
+        ]
+    },
+    {
+        "id": "f0e83203fd47bf24",
+        "type": "rbe",
+        "z": "7f99695c21df75f9",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1520,
+        "y": 360,
+        "wires": [
+            [
+                "4864450132a89ec0"
+            ]
+        ]
+    },
+    {
+        "id": "baced045676a50d4",
+        "type": "rbe",
+        "z": "7f99695c21df75f9",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1520,
+        "y": 420,
+        "wires": [
+            [
+                "fde36388a3200a3e"
+            ]
+        ]
+    },
+    {
+        "id": "f3024c7ffe435c17",
+        "type": "rbe",
+        "z": "7f99695c21df75f9",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1520,
+        "y": 480,
+        "wires": [
+            [
+                "18ed9d4014b20f54"
+            ]
+        ]
+    },
+    {
+        "id": "96cb8985529e9a38",
+        "type": "rbe",
+        "z": "7f99695c21df75f9",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1520,
+        "y": 540,
+        "wires": [
+            [
+                "6975ec2ccb7fc343"
+            ]
+        ]
+    },
+    {
+        "id": "731dcb95e56f33e7",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6d379a11de955f8",
+        "type": "link in",
+        "z": "7f99695c21df75f9",
+        "name": "link in 7",
+        "links": [
+            "39d6698f6076b1cf",
+            "88dea25fe3f80940"
+        ],
+        "x": 375,
+        "y": 740,
+        "wires": [
+            [
+                "f9905e4c44d193cb"
+            ]
+        ]
+    },
+    {
+        "id": "26231875c303ea52",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/isMotionDetected [true/false]",
+        "info": "",
+        "x": 180,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "87043e4bfa310647",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/temperature [float]",
+        "info": "",
+        "x": 210,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "a3dd92f8f3bbd818",
+        "type": "link in",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/temperature",
+        "links": [
+            "3f8a8d4cc887a6a0",
+            "d7237dea509bc5d8",
+            "72598cf98a406544",
+            "8ea881c0709024d8"
+        ],
+        "x": 375,
+        "y": 800,
+        "wires": [
+            [
+                "90cb369cdf476803"
+            ]
+        ]
+    },
+    {
+        "id": "0f55d6abd29f9e9a",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/illuminance [int]",
+        "info": "",
+        "x": 220,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "bb6d81d93e1ad55a",
+        "type": "link in",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/illuminance",
+        "links": [
+            "0fb34d273a62d5fd",
+            "4864450132a89ec0"
+        ],
+        "x": 375,
+        "y": 860,
+        "wires": [
+            [
+                "dcc2a3e8d099d6e2"
+            ]
+        ]
+    },
+    {
+        "id": "526d77e2625f2d79",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/acceleration [x,y,x]",
+        "info": "",
+        "x": 210,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "71ebe495c61eccb3",
+        "type": "link in",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/acceleration",
+        "links": [
+            "be8df522c0e4f250",
+            "fde36388a3200a3e"
+        ],
+        "x": 375,
+        "y": 920,
+        "wires": [
+            [
+                "b15903347d4f2a0e"
+            ]
+        ]
+    },
+    {
+        "id": "670c81ec836a9395",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/batteryPercentage [int]",
+        "info": "",
+        "x": 200,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "fddd5d157b9b8608",
+        "type": "link in",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/batteryPercentage",
+        "links": [
+            "214448f98c24559e",
+            "002337ab102d4f3a",
+            "4231c54266544aaa",
+            "1993e168718b6344",
+            "19d4534cec60808e",
+            "4fbb33ab4f5e3d5c",
+            "18ed9d4014b20f54",
+            "77e5d4a3042b144c",
+            "110ab9d13bfea08a",
+            "eec12574382b4adb",
+            "a90317c4da0c55da",
+            "1df4faa93103ca57"
+        ],
+        "x": 375,
+        "y": 980,
+        "wires": [
+            [
+                "14dcdaf153efe081"
+            ]
+        ]
+    },
+    {
+        "id": "194851acf9a661e4",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/realtiveHumidity [float]",
+        "info": "",
+        "x": 200,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "71d0ac9efc87d2d0",
+        "type": "link in",
+        "z": "7f99695c21df75f9",
+        "name": "/motionE8DA/relativeHumidity",
+        "links": [
+            "0be064a2c659c9a6",
+            "6975ec2ccb7fc343"
+        ],
+        "x": 375,
+        "y": 1040,
+        "wires": [
+            [
+                "7538c6ed997655b2"
+            ]
+        ]
+    },
+    {
+        "id": "054b49b098162325",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Create UI elements for each of the sensor outputs",
+        "info": "",
+        "x": 210,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "90cb369cdf476803",
+        "type": "ui_chart",
+        "z": "7f99695c21df75f9",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "10000",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 850,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7538c6ed997655b2",
+        "type": "ui_chart",
+        "z": "7f99695c21df75f9",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14dcdaf153efe081",
+        "type": "ui_chart",
+        "z": "7f99695c21df75f9",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcc2a3e8d099d6e2",
+        "type": "ui_chart",
+        "z": "7f99695c21df75f9",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Light Level",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "500",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 850,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a063943a433bfb5",
+        "type": "ui_chart",
+        "z": "7f99695c21df75f9",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Detected",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "10000",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9905e4c44d193cb",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "true->1, false->0",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}\nelse if(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 740,
+        "wires": [
+            [
+                "3a063943a433bfb5"
+            ]
+        ]
+    },
+    {
+        "id": "b15903347d4f2a0e",
+        "type": "function",
+        "z": "7f99695c21df75f9",
+        "name": "split into 3",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 920,
+        "wires": [
+            [
+                "7b92bb2359d43be8"
+            ],
+            [
+                "7b92bb2359d43be8"
+            ],
+            [
+                "7b92bb2359d43be8"
+            ]
+        ]
+    },
+    {
+        "id": "7b92bb2359d43be8",
+        "type": "ui_chart",
+        "z": "7f99695c21df75f9",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Movement",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ea0000",
+            "#00c800",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 850,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b98794e0e4d3287",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
+        "info": "",
+        "x": 290,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f7a6bae25173f749",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Only send if it's changed...",
+        "info": "",
+        "x": 1510,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c839b5e7025cda75",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "info": "",
+        "x": 800,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0d816da09048a30f",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Open the ParetoAnywhere Object to set a Device URI",
+        "info": "",
+        "x": 700,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e20aaee1ca738cd1",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "create a friendly topic name, and assign the payload here",
+        "info": "",
+        "x": 1630,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b06bfd12935f1555",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 2430,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c12b78f76f949c9e",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 1220,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "088f88b863ae0166",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
+        "info": "",
+        "x": 750,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b201875d6a5218e7",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "Only send if it's changed...",
+        "info": "",
+        "x": 1970,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4822c9458c23617d",
+        "type": "comment",
+        "z": "7f99695c21df75f9",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "info": "",
+        "x": 1260,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "f8be3fae20759ed0",
+        "type": "ui_group",
+        "name": "Motion Sensor E8DA",
+        "tab": "1298aa3fd6cc5da5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1298aa3fd6cc5da5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
