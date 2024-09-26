@@ -1,0 +1,856 @@
+[
+    {
+        "id": "1d5ae953cc9707ce",
+        "type": "tab",
+        "label": "Minew MWC01 Badge Bluetooth Repeater",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "584b06ca0fd1eb98",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/devices/c3000011f741/3",
+        "info": "",
+        "x": 150,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ef763b164c0a1dab",
+        "type": "pareto-anywhere-socketio",
+        "z": "1d5ae953cc9707ce",
+        "uri": "http://localhost:3001/devices/c3000011f741/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [],
+            [
+                "ae54c5cdf5cf1d0e",
+                "17c8096d1a946b53",
+                "acdfc096c75dc646",
+                "c993ccc59e15ff59",
+                "ae969d5306e89ee8",
+                "169fe681267288a5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a54a85ab5514cf05",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "Minew MWC01 Badge Bluetooth Repeater https://www.minewstore.com/product/mwc01-badge-bluetooth-repeater",
+        "info": "",
+        "x": 430,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4f5729bf469f02b9",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/acceleration",
+        "func": "let newmsg = {\n    topic: \"/badgeF741/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 300,
+        "wires": [
+            [
+                "f0648b800c56894f"
+            ]
+        ]
+    },
+    {
+        "id": "8befa1d6bfd45eba",
+        "type": "link out",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/acceleration",
+        "mode": "link",
+        "links": [
+            "68c2629504ca0b28",
+            "190c1992f1cbf565",
+            "b00b5206398fc5d3",
+            "9089710de0df1ad7",
+            "270f40931efab3e3"
+        ],
+        "x": 1715,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4411fea882b932e0",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/acceleration",
+        "info": "",
+        "x": 1850,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ae54c5cdf5cf1d0e",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "is it acceleration?",
+        "func": "if(msg.payload.acceleration){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "4f5729bf469f02b9"
+            ]
+        ]
+    },
+    {
+        "id": "f0648b800c56894f",
+        "type": "rbe",
+        "z": "1d5ae953cc9707ce",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1480,
+        "y": 300,
+        "wires": [
+            [
+                "8befa1d6bfd45eba"
+            ]
+        ]
+    },
+    {
+        "id": "72ecd13a563f1cc0",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/temperature",
+        "func": "let newmsg = {topic: \"/badgeF741/temperature\",\n            payload: msg.payload.temperature};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 380,
+        "wires": [
+            [
+                "6053f4335996ba76"
+            ]
+        ]
+    },
+    {
+        "id": "8ea881c0709024d8",
+        "type": "link out",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/temperature",
+        "mode": "link",
+        "links": [
+            "622bf26b87eb3ed9",
+            "46f318315efbac05",
+            "c534c42889ea8a46",
+            "a3dd92f8f3bbd818",
+            "2af44edb76086223"
+        ],
+        "x": 1715,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "77b9cec83fe62e7e",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/temperature",
+        "info": "",
+        "x": 1850,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "17c8096d1a946b53",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "is it temperature?",
+        "func": "if(msg.payload.temperature){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 380,
+        "wires": [
+            [
+                "72ecd13a563f1cc0"
+            ]
+        ]
+    },
+    {
+        "id": "6053f4335996ba76",
+        "type": "rbe",
+        "z": "1d5ae953cc9707ce",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1480,
+        "y": 380,
+        "wires": [
+            [
+                "8ea881c0709024d8"
+            ]
+        ]
+    },
+    {
+        "id": "d51dc90d170aed1d",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/batteryPercentage",
+        "func": "let newmsg = {\n    topic: \"/badgeF741/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 440,
+        "wires": [
+            [
+                "7969eaf2fa67e0c8"
+            ]
+        ]
+    },
+    {
+        "id": "110ab9d13bfea08a",
+        "type": "link out",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/batteryPercentage",
+        "mode": "link",
+        "links": [
+            "92148f9250905b6b",
+            "3b7587803e77b349",
+            "89cd1b5d44963cb4",
+            "fddd5d157b9b8608",
+            "53242798a9172140"
+        ],
+        "x": 1715,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "1291a61cadeec3c9",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/batteryPercentage",
+        "info": "",
+        "x": 1870,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "acdfc096c75dc646",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "is it batteryPercentage?",
+        "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 440,
+        "wires": [
+            [
+                "d51dc90d170aed1d"
+            ]
+        ]
+    },
+    {
+        "id": "7969eaf2fa67e0c8",
+        "type": "rbe",
+        "z": "1d5ae953cc9707ce",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1480,
+        "y": 440,
+        "wires": [
+            [
+                "110ab9d13bfea08a"
+            ]
+        ]
+    },
+    {
+        "id": "67edfd28d4606104",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/doubleClick",
+        "func": "let newmsg = {\n    topic: \"/badgeF741/doubleClick\",\n    payload: \"doubleClick\"};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 500,
+        "wires": [
+            [
+                "eb312735d8f5ff69"
+            ]
+        ]
+    },
+    {
+        "id": "eec12574382b4adb",
+        "type": "link out",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/doubleClick",
+        "mode": "link",
+        "links": [
+            "89cd1b5d44963cb4",
+            "92148f9250905b6b",
+            "8dd1e7825daec697",
+            "fddd5d157b9b8608",
+            "53242798a9172140"
+        ],
+        "x": 1715,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2869624070c35dde",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/doubleClick",
+        "info": "",
+        "x": 1850,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c993ccc59e15ff59",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "is double click on badge button?",
+        "func": "if (msg.payload.unicodeCodePoints && msg.payload.unicodeCodePoints == \"129301\"){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 500,
+        "wires": [
+            [
+                "67edfd28d4606104"
+            ]
+        ]
+    },
+    {
+        "id": "eb312735d8f5ff69",
+        "type": "rbe",
+        "z": "1d5ae953cc9707ce",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1480,
+        "y": 500,
+        "wires": [
+            [
+                "eec12574382b4adb"
+            ]
+        ]
+    },
+    {
+        "id": "efe9d9f58357ddce",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/tripleClick",
+        "func": "let newmsg = {\n    topic: \"/badgeF741/tripleClick\",\n    payload: \"tripleClick\"};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 560,
+        "wires": [
+            [
+                "2d8a3d989badc034"
+            ]
+        ]
+    },
+    {
+        "id": "a90317c4da0c55da",
+        "type": "link out",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/tripleClick",
+        "mode": "link",
+        "links": [
+            "89cd1b5d44963cb4",
+            "92148f9250905b6b",
+            "188b2020e129bf2c",
+            "fddd5d157b9b8608",
+            "53242798a9172140"
+        ],
+        "x": 1715,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "a608ccb8afa38a01",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/tripleClick",
+        "info": "",
+        "x": 1840,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ae969d5306e89ee8",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "is triple click on badge button?",
+        "func": "if (msg.payload.unicodeCodePoints && msg.payload.unicodeCodePoints == \"128076\"){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "efe9d9f58357ddce"
+            ]
+        ]
+    },
+    {
+        "id": "2d8a3d989badc034",
+        "type": "rbe",
+        "z": "1d5ae953cc9707ce",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1480,
+        "y": 560,
+        "wires": [
+            [
+                "a90317c4da0c55da"
+            ]
+        ]
+    },
+    {
+        "id": "169fe681267288a5",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "597252aa191ac18e",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/acceleration [x,y,x]",
+        "info": "",
+        "x": 230,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "9089710de0df1ad7",
+        "type": "link in",
+        "z": "1d5ae953cc9707ce",
+        "name": "/e9beacon5c26/acceleration",
+        "links": [
+            "de8fbc462923dbc9",
+            "6e29a67b8309b49b",
+            "ab7c932c0809d8f2",
+            "f0f43df8a09dbce2",
+            "8befa1d6bfd45eba"
+        ],
+        "x": 395,
+        "y": 760,
+        "wires": [
+            [
+                "4fd6f28a099c5429"
+            ]
+        ]
+    },
+    {
+        "id": "744a033cee0ece95",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/batteryPercentage [int]",
+        "info": "",
+        "x": 220,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "53242798a9172140",
+        "type": "link in",
+        "z": "1d5ae953cc9707ce",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [
+            "4231c54266544aaa",
+            "1993e168718b6344",
+            "19d4534cec60808e",
+            "4fbb33ab4f5e3d5c",
+            "77e5d4a3042b144c",
+            "110ab9d13bfea08a",
+            "eec12574382b4adb",
+            "a90317c4da0c55da"
+        ],
+        "x": 395,
+        "y": 820,
+        "wires": [
+            [
+                "fd42584ca4bd5c15"
+            ]
+        ]
+    },
+    {
+        "id": "4551514db36ab9fd",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "/badgeF741/temperature [float]",
+        "info": "",
+        "x": 230,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "2af44edb76086223",
+        "type": "link in",
+        "z": "1d5ae953cc9707ce",
+        "name": "/motionE8DA/temperature",
+        "links": [
+            "3f8a8d4cc887a6a0",
+            "d7237dea509bc5d8",
+            "72598cf98a406544",
+            "8ea881c0709024d8"
+        ],
+        "x": 395,
+        "y": 880,
+        "wires": [
+            [
+                "a05adba8824df19f"
+            ]
+        ]
+    },
+    {
+        "id": "4fd6f28a099c5429",
+        "type": "function",
+        "z": "1d5ae953cc9707ce",
+        "name": "split into 3",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 760,
+        "wires": [
+            [
+                "81c9cf39fdc243b1"
+            ],
+            [
+                "81c9cf39fdc243b1"
+            ],
+            [
+                "81c9cf39fdc243b1"
+            ]
+        ]
+    },
+    {
+        "id": "81c9cf39fdc243b1",
+        "type": "ui_chart",
+        "z": "1d5ae953cc9707ce",
+        "name": "",
+        "group": "5326dbd85c698560",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Movement",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ea0000",
+            "#00c800",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd42584ca4bd5c15",
+        "type": "ui_chart",
+        "z": "1d5ae953cc9707ce",
+        "name": "",
+        "group": "5326dbd85c698560",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a05adba8824df19f",
+        "type": "ui_chart",
+        "z": "1d5ae953cc9707ce",
+        "name": "",
+        "group": "5326dbd85c698560",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01645a4289c7e049",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "Open the ParetoAnywhere Object to set a Device URI",
+        "info": "",
+        "x": 240,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cbf1e69a3ac79bbc",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "create a friendly topic name, and assign the payload here",
+        "info": "",
+        "x": 1170,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5fdcd203f5d4aafb",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1970,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7b45b8330e4782c9",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 760,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b5ab8d1d8db0a0aa",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
+        "info": "",
+        "x": 290,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "962e9576cfe27856",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "Only send if it's changed...",
+        "info": "",
+        "x": 1510,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "852ba87a2d06874f",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "info": "",
+        "x": 800,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "0cda8120a5dd469b",
+        "type": "comment",
+        "z": "1d5ae953cc9707ce",
+        "name": "Create UI elements for each of the sensor outputs",
+        "info": "",
+        "x": 230,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5326dbd85c698560",
+        "type": "ui_group",
+        "name": "Badge F741",
+        "tab": "1298aa3fd6cc5da5",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1298aa3fd6cc5da5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
