@@ -16,7 +16,7 @@
         "deviceidtype": "0",
         "name": "",
         "x": 120,
-        "y": 260,
+        "y": 440,
         "wires": [
             [],
             [
@@ -41,7 +41,7 @@
         "finalize": "",
         "libs": [],
         "x": 1120,
-        "y": 260,
+        "y": 440,
         "wires": [
             [
                 "a26d3d2571b0c417"
@@ -60,7 +60,7 @@
             "1c08fa477d99a99e"
         ],
         "x": 1635,
-        "y": 260,
+        "y": 440,
         "wires": []
     },
     {
@@ -70,7 +70,7 @@
         "name": "/e9beacon5c26/isMotionDetected",
         "info": "",
         "x": 1800,
-        "y": 260,
+        "y": 440,
         "wires": []
     },
     {
@@ -80,7 +80,7 @@
         "name": "/devices/ac233faf5c26/2",
         "info": "",
         "x": 150,
-        "y": 320,
+        "y": 500,
         "wires": []
     },
     {
@@ -90,7 +90,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 680,
-        "y": 300,
+        "y": 480,
         "wires": []
     },
     {
@@ -106,7 +106,7 @@
         "finalize": "",
         "libs": [],
         "x": 670,
-        "y": 260,
+        "y": 440,
         "wires": [
             [
                 "badbd4ba0b67b520"
@@ -120,7 +120,7 @@
         "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
         "info": "",
         "x": 320,
-        "y": 60,
+        "y": 40,
         "wires": []
     },
     {
@@ -136,7 +136,7 @@
         "finalize": "",
         "libs": [],
         "x": 1120,
-        "y": 340,
+        "y": 520,
         "wires": [
             [
                 "1aa9056bccedbb07"
@@ -156,7 +156,7 @@
             "93a57bbd72b84360"
         ],
         "x": 1635,
-        "y": 340,
+        "y": 520,
         "wires": []
     },
     {
@@ -166,7 +166,7 @@
         "name": "/e9beacon5c26/batteryPercentage",
         "info": "",
         "x": 1800,
-        "y": 340,
+        "y": 520,
         "wires": []
     },
     {
@@ -182,7 +182,7 @@
         "finalize": "",
         "libs": [],
         "x": 670,
-        "y": 340,
+        "y": 520,
         "wires": [
             [
                 "4a210f74e0882ae8"
@@ -202,7 +202,7 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 420,
+        "y": 600,
         "wires": [
             [
                 "eaca0f8490a65089"
@@ -221,7 +221,7 @@
             "270f40931efab3e3"
         ],
         "x": 1635,
-        "y": 420,
+        "y": 600,
         "wires": []
     },
     {
@@ -231,7 +231,7 @@
         "name": "/e9beacon5c26/acceleration",
         "info": "",
         "x": 1780,
-        "y": 420,
+        "y": 600,
         "wires": []
     },
     {
@@ -247,7 +247,7 @@
         "finalize": "",
         "libs": [],
         "x": 650,
-        "y": 420,
+        "y": 600,
         "wires": [
             [
                 "b0a68ed732d1b304"
@@ -267,7 +267,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1440,
-        "y": 260,
+        "y": 440,
         "wires": [
             [
                 "9460864a184af397"
@@ -287,7 +287,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1440,
-        "y": 340,
+        "y": 520,
         "wires": [
             [
                 "1df4faa93103ca57"
@@ -307,7 +307,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1440,
-        "y": 420,
+        "y": 600,
         "wires": [
             [
                 "d16e2f395802f112"
@@ -327,7 +327,7 @@
         "finalize": "",
         "libs": [],
         "x": 160,
-        "y": 360,
+        "y": 540,
         "wires": [
             []
         ]
@@ -339,7 +339,7 @@
         "name": "/e9beacon5c26/acceleration [x,y,x]",
         "info": "",
         "x": 260,
-        "y": 640,
+        "y": 820,
         "wires": []
     },
     {
@@ -357,7 +357,7 @@
             "d16e2f395802f112"
         ],
         "x": 435,
-        "y": 640,
+        "y": 820,
         "wires": [
             [
                 "67933f5a5c7afdf5"
@@ -371,7 +371,7 @@
         "name": "/e9beacon5c26/batteryPercentage [int]",
         "info": "",
         "x": 250,
-        "y": 700,
+        "y": 880,
         "wires": []
     },
     {
@@ -384,7 +384,7 @@
             "1df4faa93103ca57"
         ],
         "x": 435,
-        "y": 700,
+        "y": 880,
         "wires": [
             [
                 "8ee4736d9f98e35b"
@@ -402,7 +402,7 @@
             "9460864a184af397"
         ],
         "x": 435,
-        "y": 760,
+        "y": 940,
         "wires": [
             [
                 "0c417a621dda8423"
@@ -416,7 +416,7 @@
         "name": "/e9beacon5c26/isMotionDetected [true/false]",
         "info": "",
         "x": 230,
-        "y": 760,
+        "y": 940,
         "wires": []
     },
     {
@@ -458,7 +458,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 900,
-        "y": 700,
+        "y": 880,
         "wires": [
             []
         ]
@@ -502,7 +502,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 930,
-        "y": 760,
+        "y": 940,
         "wires": [
             []
         ]
@@ -520,7 +520,7 @@
         "finalize": "",
         "libs": [],
         "x": 610,
-        "y": 760,
+        "y": 940,
         "wires": [
             [
                 "26132dcbc343186c"
@@ -540,7 +540,7 @@
         "finalize": "",
         "libs": [],
         "x": 610,
-        "y": 640,
+        "y": 820,
         "wires": [
             [
                 "9e55f2756731cd88"
@@ -592,20 +592,10 @@
         "useDifferentColor": false,
         "className": "",
         "x": 910,
-        "y": 640,
+        "y": 820,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "80c4a38bc7701a90",
-        "type": "comment",
-        "z": "7909cc4cfbebc6f4",
-        "name": "Open the ParetoAnywhere Object to set a Device URI",
-        "info": "",
-        "x": 220,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "57e5e9958c0111c5",
@@ -614,7 +604,7 @@
         "name": "create a friendly topic name, and assign the payload here",
         "info": "",
         "x": 1150,
-        "y": 200,
+        "y": 380,
         "wires": []
     },
     {
@@ -624,7 +614,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1950,
-        "y": 200,
+        "y": 380,
         "wires": []
     },
     {
@@ -634,17 +624,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 740,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "42bff9f73e7d273a",
-        "type": "comment",
-        "z": "7909cc4cfbebc6f4",
-        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
-        "info": "",
-        "x": 270,
-        "y": 180,
+        "y": 380,
         "wires": []
     },
     {
@@ -654,17 +634,7 @@
         "name": "Only send if it's changed...",
         "info": "",
         "x": 1490,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "a0ecf2f1f8a2ff46",
-        "type": "comment",
-        "z": "7909cc4cfbebc6f4",
-        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
-        "info": "",
-        "x": 780,
-        "y": 140,
+        "y": 380,
         "wires": []
     },
     {
@@ -674,7 +644,67 @@
         "name": "Create UI elements for each of the sensor outputs",
         "info": "",
         "x": 230,
-        "y": 580,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "f2067104fad9b12d",
+        "type": "comment",
+        "z": "7909cc4cfbebc6f4",
+        "name": "Open the ParetoAnywhere Object to set a Device URI",
+        "info": "",
+        "x": 220,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "56d45cc0c54759f0",
+        "type": "comment",
+        "z": "7909cc4cfbebc6f4",
+        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
+        "info": "",
+        "x": 270,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f7d031e3f6262cfd",
+        "type": "comment",
+        "z": "7909cc4cfbebc6f4",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "info": "",
+        "x": 780,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "1fcf5a89235cb7ee",
+        "type": "comment",
+        "z": "7909cc4cfbebc6f4",
+        "name": "Open the ParetoAnywhere Object to set a Device URI",
+        "info": "",
+        "x": 220,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e185ce2c30eb7744",
+        "type": "comment",
+        "z": "7909cc4cfbebc6f4",
+        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
+        "info": "",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e9d5478e75261c30",
+        "type": "comment",
+        "z": "7909cc4cfbebc6f4",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "info": "",
+        "x": 360,
+        "y": 100,
         "wires": []
     },
     {

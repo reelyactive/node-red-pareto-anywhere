@@ -1,6 +1,6 @@
 [
     {
-        "id": "1d5ae953cc9707ce",
+        "id": "0f19d98c62c2f257",
         "type": "tab",
         "label": "Minew MWC01 Badge Bluetooth Repeater",
         "disabled": false,
@@ -8,52 +8,52 @@
         "env": []
     },
     {
-        "id": "584b06ca0fd1eb98",
+        "id": "af1bf0ebab9ac9e3",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/devices/c3000011f741/3",
         "info": "",
         "x": 150,
-        "y": 360,
+        "y": 500,
         "wires": []
     },
     {
-        "id": "ef763b164c0a1dab",
+        "id": "89c362078645b4b0",
         "type": "pareto-anywhere-socketio",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "uri": "http://localhost:3001/devices/c3000011f741/3",
         "deviceid": "",
         "deviceidtype": "0",
         "name": "",
         "x": 130,
-        "y": 300,
+        "y": 440,
         "wires": [
             [],
             [
-                "ae54c5cdf5cf1d0e",
-                "17c8096d1a946b53",
-                "acdfc096c75dc646",
-                "c993ccc59e15ff59",
-                "ae969d5306e89ee8",
-                "169fe681267288a5"
+                "cae6f543f4279614",
+                "33cf73f4252e0d76",
+                "f7bf7a5b2807b4a1",
+                "c5c109d7c51ff0c0",
+                "04fad7df96e9770e",
+                "672188507aa20fa1"
             ],
             []
         ]
     },
     {
-        "id": "a54a85ab5514cf05",
+        "id": "d1f10a31e514195c",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "Minew MWC01 Badge Bluetooth Repeater https://www.minewstore.com/product/mwc01-badge-bluetooth-repeater",
         "info": "",
         "x": 430,
-        "y": 40,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "4f5729bf469f02b9",
+        "id": "f338cdcc5ac188e1",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/acceleration",
         "func": "let newmsg = {\n    topic: \"/badgeF741/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
         "outputs": 1,
@@ -63,44 +63,44 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 300,
+        "y": 440,
         "wires": [
             [
-                "f0648b800c56894f"
+                "07b36ae84f27d712"
             ]
         ]
     },
     {
-        "id": "8befa1d6bfd45eba",
+        "id": "652c3a8fc8228380",
         "type": "link out",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/acceleration",
         "mode": "link",
         "links": [
             "68c2629504ca0b28",
             "190c1992f1cbf565",
             "b00b5206398fc5d3",
-            "9089710de0df1ad7",
+            "664fd7bbaa40427d",
             "270f40931efab3e3"
         ],
         "x": 1715,
-        "y": 300,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "4411fea882b932e0",
+        "id": "fec60b2e3a6638ee",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/acceleration",
         "info": "",
         "x": 1850,
-        "y": 300,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "ae54c5cdf5cf1d0e",
+        "id": "cae6f543f4279614",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "is it acceleration?",
         "func": "if(msg.payload.acceleration){\n    return msg;\n}",
         "outputs": 1,
@@ -110,17 +110,17 @@
         "finalize": "",
         "libs": [],
         "x": 670,
-        "y": 300,
+        "y": 440,
         "wires": [
             [
-                "4f5729bf469f02b9"
+                "f338cdcc5ac188e1"
             ]
         ]
     },
     {
-        "id": "f0648b800c56894f",
+        "id": "07b36ae84f27d712",
         "type": "rbe",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "changed?",
         "func": "rbe",
         "gap": "",
@@ -130,17 +130,17 @@
         "property": "payload",
         "topi": "topic",
         "x": 1480,
-        "y": 300,
+        "y": 440,
         "wires": [
             [
-                "8befa1d6bfd45eba"
+                "652c3a8fc8228380"
             ]
         ]
     },
     {
-        "id": "72ecd13a563f1cc0",
+        "id": "d0a6d453fe335fc3",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/temperature",
         "func": "let newmsg = {topic: \"/badgeF741/temperature\",\n            payload: msg.payload.temperature};\nreturn newmsg;",
         "outputs": 1,
@@ -150,17 +150,17 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
-                "6053f4335996ba76"
+                "74519384b6c0b530"
             ]
         ]
     },
     {
-        "id": "8ea881c0709024d8",
+        "id": "f2483fdd6766de0b",
         "type": "link out",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/temperature",
         "mode": "link",
         "links": [
@@ -168,26 +168,26 @@
             "46f318315efbac05",
             "c534c42889ea8a46",
             "a3dd92f8f3bbd818",
-            "2af44edb76086223"
+            "816b2872057b7b82"
         ],
         "x": 1715,
-        "y": 380,
+        "y": 520,
         "wires": []
     },
     {
-        "id": "77b9cec83fe62e7e",
+        "id": "cd4442e847a0e9ef",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/temperature",
         "info": "",
         "x": 1850,
-        "y": 380,
+        "y": 520,
         "wires": []
     },
     {
-        "id": "17c8096d1a946b53",
+        "id": "33cf73f4252e0d76",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "is it temperature?",
         "func": "if(msg.payload.temperature){\n    return msg;\n}",
         "outputs": 1,
@@ -197,17 +197,17 @@
         "finalize": "",
         "libs": [],
         "x": 670,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
-                "72ecd13a563f1cc0"
+                "d0a6d453fe335fc3"
             ]
         ]
     },
     {
-        "id": "6053f4335996ba76",
+        "id": "74519384b6c0b530",
         "type": "rbe",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "changed?",
         "func": "rbe",
         "gap": "",
@@ -217,17 +217,17 @@
         "property": "payload",
         "topi": "topic",
         "x": 1480,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
-                "8ea881c0709024d8"
+                "f2483fdd6766de0b"
             ]
         ]
     },
     {
-        "id": "d51dc90d170aed1d",
+        "id": "6948e0353e1be465",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/batteryPercentage",
         "func": "let newmsg = {\n    topic: \"/badgeF741/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
         "outputs": 1,
@@ -237,17 +237,17 @@
         "finalize": "",
         "libs": [],
         "x": 1130,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
-                "7969eaf2fa67e0c8"
+                "f5e96e70cce6e956"
             ]
         ]
     },
     {
-        "id": "110ab9d13bfea08a",
+        "id": "120ed85db8ef7345",
         "type": "link out",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/batteryPercentage",
         "mode": "link",
         "links": [
@@ -255,26 +255,26 @@
             "3b7587803e77b349",
             "89cd1b5d44963cb4",
             "fddd5d157b9b8608",
-            "53242798a9172140"
+            "cf016166d78f150f"
         ],
         "x": 1715,
-        "y": 440,
+        "y": 580,
         "wires": []
     },
     {
-        "id": "1291a61cadeec3c9",
+        "id": "a5a4454e6c751ab8",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/batteryPercentage",
         "info": "",
         "x": 1870,
-        "y": 440,
+        "y": 580,
         "wires": []
     },
     {
-        "id": "acdfc096c75dc646",
+        "id": "f7bf7a5b2807b4a1",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "is it batteryPercentage?",
         "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
         "outputs": 1,
@@ -284,17 +284,17 @@
         "finalize": "",
         "libs": [],
         "x": 690,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
-                "d51dc90d170aed1d"
+                "6948e0353e1be465"
             ]
         ]
     },
     {
-        "id": "7969eaf2fa67e0c8",
+        "id": "f5e96e70cce6e956",
         "type": "rbe",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "changed?",
         "func": "rbe",
         "gap": "",
@@ -304,17 +304,17 @@
         "property": "payload",
         "topi": "topic",
         "x": 1480,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
-                "110ab9d13bfea08a"
+                "120ed85db8ef7345"
             ]
         ]
     },
     {
-        "id": "67edfd28d4606104",
+        "id": "5cfaf8f39ecd1a45",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/doubleClick",
         "func": "let newmsg = {\n    topic: \"/badgeF741/doubleClick\",\n    payload: \"doubleClick\"};\nreturn newmsg;",
         "outputs": 1,
@@ -324,17 +324,17 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
-                "eb312735d8f5ff69"
+                "64795f455c0afb73"
             ]
         ]
     },
     {
-        "id": "eec12574382b4adb",
+        "id": "162258e37e69a931",
         "type": "link out",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/doubleClick",
         "mode": "link",
         "links": [
@@ -342,26 +342,26 @@
             "92148f9250905b6b",
             "8dd1e7825daec697",
             "fddd5d157b9b8608",
-            "53242798a9172140"
+            "cf016166d78f150f"
         ],
         "x": 1715,
-        "y": 500,
+        "y": 640,
         "wires": []
     },
     {
-        "id": "2869624070c35dde",
+        "id": "48ca018c65c58cbb",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/doubleClick",
         "info": "",
         "x": 1850,
-        "y": 500,
+        "y": 640,
         "wires": []
     },
     {
-        "id": "c993ccc59e15ff59",
+        "id": "c5c109d7c51ff0c0",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "is double click on badge button?",
         "func": "if (msg.payload.unicodeCodePoints && msg.payload.unicodeCodePoints == \"129301\"){\n    return msg;\n}",
         "outputs": 1,
@@ -371,17 +371,17 @@
         "finalize": "",
         "libs": [],
         "x": 720,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
-                "67edfd28d4606104"
+                "5cfaf8f39ecd1a45"
             ]
         ]
     },
     {
-        "id": "eb312735d8f5ff69",
+        "id": "64795f455c0afb73",
         "type": "rbe",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "changed?",
         "func": "rbe",
         "gap": "",
@@ -391,17 +391,17 @@
         "property": "payload",
         "topi": "topic",
         "x": 1480,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
-                "eec12574382b4adb"
+                "162258e37e69a931"
             ]
         ]
     },
     {
-        "id": "efe9d9f58357ddce",
+        "id": "10924ee172d1cdb9",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/tripleClick",
         "func": "let newmsg = {\n    topic: \"/badgeF741/tripleClick\",\n    payload: \"tripleClick\"};\nreturn newmsg;",
         "outputs": 1,
@@ -411,17 +411,17 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 560,
+        "y": 700,
         "wires": [
             [
-                "2d8a3d989badc034"
+                "8c5cd1f527170bc7"
             ]
         ]
     },
     {
-        "id": "a90317c4da0c55da",
+        "id": "78f8417ba14e99b9",
         "type": "link out",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/tripleClick",
         "mode": "link",
         "links": [
@@ -429,26 +429,26 @@
             "92148f9250905b6b",
             "188b2020e129bf2c",
             "fddd5d157b9b8608",
-            "53242798a9172140"
+            "cf016166d78f150f"
         ],
         "x": 1715,
-        "y": 560,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "a608ccb8afa38a01",
+        "id": "02d1bb6fa4854f0a",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/tripleClick",
         "info": "",
         "x": 1840,
-        "y": 560,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "ae969d5306e89ee8",
+        "id": "04fad7df96e9770e",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "is triple click on badge button?",
         "func": "if (msg.payload.unicodeCodePoints && msg.payload.unicodeCodePoints == \"128076\"){\n    return msg;\n}",
         "outputs": 1,
@@ -458,17 +458,17 @@
         "finalize": "",
         "libs": [],
         "x": 710,
-        "y": 560,
+        "y": 700,
         "wires": [
             [
-                "efe9d9f58357ddce"
+                "10924ee172d1cdb9"
             ]
         ]
     },
     {
-        "id": "2d8a3d989badc034",
+        "id": "8c5cd1f527170bc7",
         "type": "rbe",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "changed?",
         "func": "rbe",
         "gap": "",
@@ -478,17 +478,17 @@
         "property": "payload",
         "topi": "topic",
         "x": 1480,
-        "y": 560,
+        "y": 700,
         "wires": [
             [
-                "a90317c4da0c55da"
+                "78f8417ba14e99b9"
             ]
         ]
     },
     {
-        "id": "169fe681267288a5",
+        "id": "672188507aa20fa1",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "save to capturedBLE",
         "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
         "outputs": 1,
@@ -498,55 +498,55 @@
         "finalize": "",
         "libs": [],
         "x": 160,
-        "y": 400,
+        "y": 540,
         "wires": [
             []
         ]
     },
     {
-        "id": "597252aa191ac18e",
+        "id": "3701ebb8609ff1f3",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/acceleration [x,y,x]",
         "info": "",
         "x": 230,
-        "y": 760,
+        "y": 900,
         "wires": []
     },
     {
-        "id": "9089710de0df1ad7",
+        "id": "664fd7bbaa40427d",
         "type": "link in",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/e9beacon5c26/acceleration",
         "links": [
             "de8fbc462923dbc9",
             "6e29a67b8309b49b",
             "ab7c932c0809d8f2",
             "f0f43df8a09dbce2",
-            "8befa1d6bfd45eba"
+            "652c3a8fc8228380"
         ],
         "x": 395,
-        "y": 760,
+        "y": 900,
         "wires": [
             [
-                "4fd6f28a099c5429"
+                "44b033cb756cc3c4"
             ]
         ]
     },
     {
-        "id": "744a033cee0ece95",
+        "id": "1b63eb2ebfc057cf",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/batteryPercentage [int]",
         "info": "",
         "x": 220,
-        "y": 820,
+        "y": 960,
         "wires": []
     },
     {
-        "id": "53242798a9172140",
+        "id": "cf016166d78f150f",
         "type": "link in",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/e9beacon5c26/batteryPercentage",
         "links": [
             "4231c54266544aaa",
@@ -554,51 +554,51 @@
             "19d4534cec60808e",
             "4fbb33ab4f5e3d5c",
             "77e5d4a3042b144c",
-            "110ab9d13bfea08a",
-            "eec12574382b4adb",
-            "a90317c4da0c55da"
+            "120ed85db8ef7345",
+            "162258e37e69a931",
+            "78f8417ba14e99b9"
         ],
         "x": 395,
-        "y": 820,
+        "y": 960,
         "wires": [
             [
-                "fd42584ca4bd5c15"
+                "7b3e00c6518e2d38"
             ]
         ]
     },
     {
-        "id": "4551514db36ab9fd",
+        "id": "0dd17f86dda3ee2c",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/badgeF741/temperature [float]",
         "info": "",
         "x": 230,
-        "y": 880,
+        "y": 1020,
         "wires": []
     },
     {
-        "id": "2af44edb76086223",
+        "id": "816b2872057b7b82",
         "type": "link in",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "/motionE8DA/temperature",
         "links": [
             "3f8a8d4cc887a6a0",
             "d7237dea509bc5d8",
             "72598cf98a406544",
-            "8ea881c0709024d8"
+            "f2483fdd6766de0b"
         ],
         "x": 395,
-        "y": 880,
+        "y": 1020,
         "wires": [
             [
-                "a05adba8824df19f"
+                "05c56188dea8c4a1"
             ]
         ]
     },
     {
-        "id": "4fd6f28a099c5429",
+        "id": "44b033cb756cc3c4",
         "type": "function",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "split into 3",
         "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
         "outputs": 3,
@@ -608,25 +608,25 @@
         "finalize": "",
         "libs": [],
         "x": 570,
-        "y": 760,
+        "y": 900,
         "wires": [
             [
-                "81c9cf39fdc243b1"
+                "aba03605c1ac1e7f"
             ],
             [
-                "81c9cf39fdc243b1"
+                "aba03605c1ac1e7f"
             ],
             [
-                "81c9cf39fdc243b1"
+                "aba03605c1ac1e7f"
             ]
         ]
     },
     {
-        "id": "81c9cf39fdc243b1",
+        "id": "aba03605c1ac1e7f",
         "type": "ui_chart",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "",
-        "group": "5326dbd85c698560",
+        "group": "54302cb6d79a9c1c",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -660,17 +660,17 @@
         "useDifferentColor": false,
         "className": "",
         "x": 870,
-        "y": 760,
+        "y": 900,
         "wires": [
             []
         ]
     },
     {
-        "id": "fd42584ca4bd5c15",
+        "id": "7b3e00c6518e2d38",
         "type": "ui_chart",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "",
-        "group": "5326dbd85c698560",
+        "group": "54302cb6d79a9c1c",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -704,17 +704,17 @@
         "useDifferentColor": false,
         "className": "",
         "x": 860,
-        "y": 820,
+        "y": 960,
         "wires": [
             []
         ]
     },
     {
-        "id": "a05adba8824df19f",
+        "id": "05c56188dea8c4a1",
         "type": "ui_chart",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "",
-        "group": "5326dbd85c698560",
+        "group": "54302cb6d79a9c1c",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -748,15 +748,95 @@
         "useDifferentColor": false,
         "className": "",
         "x": 870,
-        "y": 880,
+        "y": 1020,
         "wires": [
             []
         ]
     },
     {
-        "id": "01645a4289c7e049",
+        "id": "231a51630b1db266",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
+        "name": "create a friendly topic name, and assign the payload here",
+        "info": "",
+        "x": 1170,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "bd971d8ebcb5d6c1",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1970,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "df9bdfb5d4a83202",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 760,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "747fef97ef6ab9a1",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "Only send if it's changed...",
+        "info": "",
+        "x": 1510,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "34191858460e1f2e",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "Create UI elements for each of the sensor outputs",
+        "info": "",
+        "x": 230,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "41b483ef7b05d5a8",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "Open the ParetoAnywhere Object to set a Device URI",
+        "info": "",
+        "x": 240,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "af3e76d9a40f77f4",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
+        "info": "",
+        "x": 290,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c821a28dae02e6a0",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "info": "",
+        "x": 800,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f3cc532a376b2ee5",
+        "type": "comment",
+        "z": "0f19d98c62c2f257",
         "name": "Open the ParetoAnywhere Object to set a Device URI",
         "info": "",
         "x": 240,
@@ -764,77 +844,27 @@
         "wires": []
     },
     {
-        "id": "cbf1e69a3ac79bbc",
+        "id": "f0fbc956fff48f3a",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
-        "name": "create a friendly topic name, and assign the payload here",
-        "info": "",
-        "x": 1170,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "5fdcd203f5d4aafb",
-        "type": "comment",
-        "z": "1d5ae953cc9707ce",
-        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
-        "info": "",
-        "x": 1970,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "7b45b8330e4782c9",
-        "type": "comment",
-        "z": "1d5ae953cc9707ce",
-        "name": "Confirm the property of the right name exists...",
-        "info": "",
-        "x": 760,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "b5ab8d1d8db0a0aa",
-        "type": "comment",
-        "z": "1d5ae953cc9707ce",
+        "z": "0f19d98c62c2f257",
         "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
         "info": "",
-        "x": 290,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "962e9576cfe27856",
-        "type": "comment",
-        "z": "1d5ae953cc9707ce",
-        "name": "Only send if it's changed...",
-        "info": "",
-        "x": 1510,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "852ba87a2d06874f",
-        "type": "comment",
-        "z": "1d5ae953cc9707ce",
-        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
-        "info": "",
-        "x": 800,
+        "x": 710,
         "y": 180,
         "wires": []
     },
     {
-        "id": "0cda8120a5dd469b",
+        "id": "e371faf524d74a00",
         "type": "comment",
-        "z": "1d5ae953cc9707ce",
-        "name": "Create UI elements for each of the sensor outputs",
+        "z": "0f19d98c62c2f257",
+        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
         "info": "",
-        "x": 230,
-        "y": 680,
+        "x": 380,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "5326dbd85c698560",
+        "id": "54302cb6d79a9c1c",
         "type": "ui_group",
         "name": "Badge F741",
         "tab": "1298aa3fd6cc5da5",

@@ -11,20 +11,10 @@
         "id": "57c7f54bd83b1b4a",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "This flow Runs on IoT Sandbox, with ParetoAnywhere Installed",
+        "name": "This flow runs on a machine with ParetoAnywhere Installed",
         "info": "This machine needs to have ParetoAnywhere installed.",
-        "x": 250,
+        "x": 230,
         "y": 60,
-        "wires": []
-    },
-    {
-        "id": "41759bd8c50d792e",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "When creating new BLE messages, use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
-        "info": "",
-        "x": 450,
-        "y": 140,
         "wires": []
     },
     {
@@ -458,20 +448,20 @@
         "id": "8c57aa949ac33da3",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "UI at http://[THIS_MACHINE_IP]:1880/ui",
+        "name": "The Node-RED dashboard where you can see all the devices and their outputs is at http://[THIS_MACHINE_IP]:1880/ui",
         "info": "",
-        "x": 1000,
-        "y": 220,
+        "x": 420,
+        "y": 260,
         "wires": []
     },
     {
         "id": "cfc1a391de90d4b5",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "Each tab to the right is a sample for access data from a different paret-compatible device. Take a look!",
+        "name": "Other flows in the the Examples for the Pareto Anywhere node are examples of how to use specific devices with the Pareto Anywhere node",
         "info": "",
-        "x": 370,
-        "y": 260,
+        "x": 480,
+        "y": 300,
         "wires": []
     },
     {
@@ -482,16 +472,6 @@
         "info": "",
         "x": 320,
         "y": 620,
-        "wires": []
-    },
-    {
-        "id": "cc3d77d60a335501",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "This flow repo at: https://github.com/donundeen/ParetoNodeRED",
-        "info": "",
-        "x": 770,
-        "y": 60,
         "wires": []
     },
     {

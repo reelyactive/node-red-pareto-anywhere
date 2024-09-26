@@ -15,8 +15,8 @@
         "deviceid": "",
         "deviceidtype": "0",
         "name": "",
-        "x": 160,
-        "y": 200,
+        "x": 140,
+        "y": 320,
         "wires": [
             [],
             [
@@ -43,8 +43,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 200,
+        "x": 1110,
+        "y": 320,
         "wires": [
             [
                 "962d6d7cc3125785"
@@ -58,7 +58,7 @@
         "name": "Open the ParetoAnywhere Object to set a Device URI",
         "info": "",
         "x": 240,
-        "y": 100,
+        "y": 160,
         "wires": []
     },
     {
@@ -67,8 +67,8 @@
         "z": "7f99695c21df75f9",
         "name": "create a friendly topic name, and assign the payload here",
         "info": "",
-        "x": 1170,
-        "y": 160,
+        "x": 1150,
+        "y": 280,
         "wires": []
     },
     {
@@ -77,8 +77,8 @@
         "z": "7f99695c21df75f9",
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
-        "x": 1970,
-        "y": 160,
+        "x": 1950,
+        "y": 280,
         "wires": []
     },
     {
@@ -93,8 +93,8 @@
             "da9387dc2680a057",
             "a6d379a11de955f8"
         ],
-        "x": 1655,
-        "y": 200,
+        "x": 1635,
+        "y": 320,
         "wires": []
     },
     {
@@ -103,8 +103,8 @@
         "z": "7f99695c21df75f9",
         "name": "/motionE8DA/isMotionDetected",
         "info": "",
-        "x": 1810,
-        "y": 200,
+        "x": 1790,
+        "y": 320,
         "wires": []
     },
     {
@@ -113,8 +113,8 @@
         "z": "7f99695c21df75f9",
         "name": "/devices/c300000ae8da/3",
         "info": "",
-        "x": 160,
-        "y": 240,
+        "x": 140,
+        "y": 360,
         "wires": []
     },
     {
@@ -123,18 +123,8 @@
         "z": "7f99695c21df75f9",
         "name": "Confirm the property of the right name exists...",
         "info": "",
-        "x": 760,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "0b646b253e628020",
-        "type": "comment",
-        "z": "7f99695c21df75f9",
-        "name": "Even if we trust the device....",
-        "info": "",
-        "x": 700,
-        "y": 240,
+        "x": 740,
+        "y": 280,
         "wires": []
     },
     {
@@ -149,8 +139,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 200,
+        "x": 660,
+        "y": 320,
         "wires": [
             [
                 "44706c292c21ec60"
@@ -169,8 +159,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1120,
-        "y": 300,
+        "x": 1100,
+        "y": 420,
         "wires": [
             [
                 "92dfb41f68deaca5"
@@ -191,8 +181,8 @@
             "a3dd92f8f3bbd818",
             "2af44edb76086223"
         ],
-        "x": 1655,
-        "y": 300,
+        "x": 1635,
+        "y": 420,
         "wires": []
     },
     {
@@ -201,8 +191,8 @@
         "z": "7f99695c21df75f9",
         "name": "/motionE8DA/temperature",
         "info": "",
-        "x": 1790,
-        "y": 300,
+        "x": 1770,
+        "y": 420,
         "wires": []
     },
     {
@@ -217,8 +207,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 300,
+        "x": 650,
+        "y": 420,
         "wires": [
             [
                 "99e5ad2b40116bcb"
@@ -237,8 +227,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 360,
+        "x": 1090,
+        "y": 480,
         "wires": [
             [
                 "f0e83203fd47bf24"
@@ -256,8 +246,8 @@
             "c1d1dfc74b17a671",
             "bb6d81d93e1ad55a"
         ],
-        "x": 1655,
-        "y": 360,
+        "x": 1635,
+        "y": 480,
         "wires": []
     },
     {
@@ -266,8 +256,8 @@
         "z": "7f99695c21df75f9",
         "name": "/motionE8DA/illuminance",
         "info": "",
-        "x": 1790,
-        "y": 360,
+        "x": 1770,
+        "y": 480,
         "wires": []
     },
     {
@@ -282,8 +272,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 360,
+        "x": 640,
+        "y": 480,
         "wires": [
             [
                 "31722eca1240b99b"
@@ -302,8 +292,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1120,
-        "y": 420,
+        "x": 1100,
+        "y": 540,
         "wires": [
             [
                 "baced045676a50d4"
@@ -321,8 +311,8 @@
             "34179481a9d37d57",
             "71ebe495c61eccb3"
         ],
-        "x": 1655,
-        "y": 420,
+        "x": 1635,
+        "y": 540,
         "wires": []
     },
     {
@@ -331,8 +321,8 @@
         "z": "7f99695c21df75f9",
         "name": "/motionE8DA/acceleration",
         "info": "",
-        "x": 1790,
-        "y": 420,
+        "x": 1770,
+        "y": 540,
         "wires": []
     },
     {
@@ -347,8 +337,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 420,
+        "x": 650,
+        "y": 540,
         "wires": [
             [
                 "bef0d88ada146ed2"
@@ -367,8 +357,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 480,
+        "x": 1110,
+        "y": 600,
         "wires": [
             [
                 "f3024c7ffe435c17"
@@ -386,8 +376,8 @@
             "92148f9250905b6b",
             "fddd5d157b9b8608"
         ],
-        "x": 1655,
-        "y": 480,
+        "x": 1635,
+        "y": 600,
         "wires": []
     },
     {
@@ -396,8 +386,8 @@
         "z": "7f99695c21df75f9",
         "name": "/motionE8DA/batteryPercentage",
         "info": "",
-        "x": 1810,
-        "y": 480,
+        "x": 1790,
+        "y": 600,
         "wires": []
     },
     {
@@ -412,8 +402,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 480,
+        "x": 670,
+        "y": 600,
         "wires": [
             [
                 "1972f1375cd7c163"
@@ -432,8 +422,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 540,
+        "x": 1110,
+        "y": 660,
         "wires": [
             [
                 "96cb8985529e9a38"
@@ -451,8 +441,8 @@
             "10d09e9ebbae4a39",
             "71d0ac9efc87d2d0"
         ],
-        "x": 1655,
-        "y": 540,
+        "x": 1635,
+        "y": 660,
         "wires": []
     },
     {
@@ -461,8 +451,8 @@
         "z": "7f99695c21df75f9",
         "name": "/motionE8DA/relativeHumidity",
         "info": "",
-        "x": 1800,
-        "y": 540,
+        "x": 1780,
+        "y": 660,
         "wires": []
     },
     {
@@ -477,8 +467,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 540,
+        "x": 660,
+        "y": 660,
         "wires": [
             [
                 "43e0590993efdfad"
@@ -492,7 +482,7 @@
         "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
         "info": "",
         "x": 380,
-        "y": 20,
+        "y": 40,
         "wires": []
     },
     {
@@ -507,8 +497,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1520,
-        "y": 200,
+        "x": 1500,
+        "y": 320,
         "wires": [
             [
                 "88dea25fe3f80940"
@@ -527,8 +517,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1520,
-        "y": 300,
+        "x": 1500,
+        "y": 420,
         "wires": [
             [
                 "72598cf98a406544"
@@ -547,8 +537,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1520,
-        "y": 360,
+        "x": 1500,
+        "y": 480,
         "wires": [
             [
                 "4864450132a89ec0"
@@ -567,8 +557,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1520,
-        "y": 420,
+        "x": 1500,
+        "y": 540,
         "wires": [
             [
                 "fde36388a3200a3e"
@@ -587,8 +577,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1520,
-        "y": 480,
+        "x": 1500,
+        "y": 600,
         "wires": [
             [
                 "18ed9d4014b20f54"
@@ -607,8 +597,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1520,
-        "y": 540,
+        "x": 1500,
+        "y": 660,
         "wires": [
             [
                 "6975ec2ccb7fc343"
@@ -627,8 +617,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 170,
-        "y": 280,
+        "x": 150,
+        "y": 400,
         "wires": [
             []
         ]
@@ -643,7 +633,7 @@
             "88dea25fe3f80940"
         ],
         "x": 375,
-        "y": 740,
+        "y": 800,
         "wires": [
             [
                 "f9905e4c44d193cb"
@@ -657,7 +647,7 @@
         "name": "/motionE8DA/isMotionDetected [true/false]",
         "info": "",
         "x": 180,
-        "y": 740,
+        "y": 800,
         "wires": []
     },
     {
@@ -667,7 +657,7 @@
         "name": "/motionE8DA/temperature [float]",
         "info": "",
         "x": 210,
-        "y": 800,
+        "y": 860,
         "wires": []
     },
     {
@@ -682,7 +672,7 @@
             "8ea881c0709024d8"
         ],
         "x": 375,
-        "y": 800,
+        "y": 860,
         "wires": [
             [
                 "90cb369cdf476803"
@@ -696,7 +686,7 @@
         "name": "/motionE8DA/illuminance [int]",
         "info": "",
         "x": 220,
-        "y": 860,
+        "y": 920,
         "wires": []
     },
     {
@@ -709,7 +699,7 @@
             "4864450132a89ec0"
         ],
         "x": 375,
-        "y": 860,
+        "y": 920,
         "wires": [
             [
                 "dcc2a3e8d099d6e2"
@@ -723,7 +713,7 @@
         "name": "/motionE8DA/acceleration [x,y,x]",
         "info": "",
         "x": 210,
-        "y": 920,
+        "y": 980,
         "wires": []
     },
     {
@@ -736,7 +726,7 @@
             "fde36388a3200a3e"
         ],
         "x": 375,
-        "y": 920,
+        "y": 980,
         "wires": [
             [
                 "b15903347d4f2a0e"
@@ -750,7 +740,7 @@
         "name": "/motionE8DA/batteryPercentage [int]",
         "info": "",
         "x": 200,
-        "y": 980,
+        "y": 1040,
         "wires": []
     },
     {
@@ -773,7 +763,7 @@
             "1df4faa93103ca57"
         ],
         "x": 375,
-        "y": 980,
+        "y": 1040,
         "wires": [
             [
                 "14dcdaf153efe081"
@@ -787,7 +777,7 @@
         "name": "/motionE8DA/realtiveHumidity [float]",
         "info": "",
         "x": 200,
-        "y": 1040,
+        "y": 1100,
         "wires": []
     },
     {
@@ -800,7 +790,7 @@
             "6975ec2ccb7fc343"
         ],
         "x": 375,
-        "y": 1040,
+        "y": 1100,
         "wires": [
             [
                 "7538c6ed997655b2"
@@ -814,7 +804,7 @@
         "name": "Create UI elements for each of the sensor outputs",
         "info": "",
         "x": 210,
-        "y": 680,
+        "y": 740,
         "wires": []
     },
     {
@@ -856,7 +846,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 850,
-        "y": 800,
+        "y": 860,
         "wires": [
             []
         ]
@@ -900,7 +890,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 840,
-        "y": 1040,
+        "y": 1100,
         "wires": [
             []
         ]
@@ -944,7 +934,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 840,
-        "y": 980,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -988,7 +978,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 850,
-        "y": 860,
+        "y": 920,
         "wires": [
             []
         ]
@@ -1032,7 +1022,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 870,
-        "y": 740,
+        "y": 800,
         "wires": [
             []
         ]
@@ -1050,7 +1040,7 @@
         "finalize": "",
         "libs": [],
         "x": 550,
-        "y": 740,
+        "y": 800,
         "wires": [
             [
                 "3a063943a433bfb5"
@@ -1070,7 +1060,7 @@
         "finalize": "",
         "libs": [],
         "x": 550,
-        "y": 920,
+        "y": 980,
         "wires": [
             [
                 "7b92bb2359d43be8"
@@ -1122,7 +1112,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 850,
-        "y": 920,
+        "y": 980,
         "wires": [
             []
         ]
@@ -1134,7 +1124,7 @@
         "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
         "info": "",
         "x": 290,
-        "y": 140,
+        "y": 200,
         "wires": []
     },
     {
@@ -1143,8 +1133,8 @@
         "z": "7f99695c21df75f9",
         "name": "Only send if it's changed...",
         "info": "",
-        "x": 1510,
-        "y": 160,
+        "x": 1490,
+        "y": 280,
         "wires": []
     },
     {
@@ -1154,7 +1144,7 @@
         "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
         "info": "",
         "x": 800,
-        "y": 100,
+        "y": 160,
         "wires": []
     },
     {
@@ -1163,38 +1153,8 @@
         "z": "7f99695c21df75f9",
         "name": "Open the ParetoAnywhere Object to set a Device URI",
         "info": "",
-        "x": 700,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "e20aaee1ca738cd1",
-        "type": "comment",
-        "z": "7f99695c21df75f9",
-        "name": "create a friendly topic name, and assign the payload here",
-        "info": "",
-        "x": 1630,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "b06bfd12935f1555",
-        "type": "comment",
-        "z": "7f99695c21df75f9",
-        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
-        "info": "",
-        "x": 2430,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "c12b78f76f949c9e",
-        "type": "comment",
-        "z": "7f99695c21df75f9",
-        "name": "Confirm the property of the right name exists...",
-        "info": "",
-        "x": 1220,
-        "y": 80,
+        "x": 240,
+        "y": 120,
         "wires": []
     },
     {
@@ -1203,18 +1163,8 @@
         "z": "7f99695c21df75f9",
         "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
         "info": "",
-        "x": 750,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "b201875d6a5218e7",
-        "type": "comment",
-        "z": "7f99695c21df75f9",
-        "name": "Only send if it's changed...",
-        "info": "",
-        "x": 1970,
-        "y": 80,
+        "x": 710,
+        "y": 120,
         "wires": []
     },
     {
@@ -1223,8 +1173,8 @@
         "z": "7f99695c21df75f9",
         "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
         "info": "",
-        "x": 1260,
-        "y": 20,
+        "x": 380,
+        "y": 80,
         "wires": []
     },
     {
