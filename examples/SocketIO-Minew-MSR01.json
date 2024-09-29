@@ -1,6 +1,6 @@
 [
     {
-        "id": "b6b666e109b1bebf",
+        "id": "b6bfd1423dd1a748",
         "type": "tab",
         "label": "MSR01 Millimeter Wave Radar",
         "disabled": false,
@@ -8,9 +8,9 @@
         "env": []
     },
     {
-        "id": "642ead83a8853fa0",
+        "id": "a326364d1f42c96b",
         "type": "comment",
-        "z": "b6b666e109b1bebf",
+        "z": "b6bfd1423dd1a748",
         "name": "MSR01 Millimeter Wave Radar Sensor https://www.minew.com/product/msr01-millimeter-wave-radar-sensor/",
         "info": "",
         "x": 410,
@@ -18,524 +18,142 @@
         "wires": []
     },
     {
-        "id": "76d57e19ae514b71",
+        "id": "3d62c1fa084c2cd7",
         "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/numberOfOccupants [int]",
+        "z": "b6bfd1423dd1a748",
+        "name": "Open the ParetoAnywhere Object to set a Device URI, or set the Id and select the typeId",
         "info": "",
-        "x": 190,
-        "y": 720,
+        "x": 350,
+        "y": 100,
         "wires": []
     },
     {
-        "id": "3e3ee06cc04d5840",
-        "type": "link in",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/numberOfOccupants",
-        "links": [
-            "6e29a67b8309b49b",
-            "ab7c932c0809d8f2",
-            "1b55a311c8752235"
-        ],
-        "x": 375,
-        "y": 720,
-        "wires": [
-            [
-                "68184b10f491d41d",
-                "7b77fac22d517b56"
-            ]
-        ]
-    },
-    {
-        "id": "2456021d37e2ad55",
+        "id": "e178c8cf570f8f14",
         "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/batteryPercentage [int]",
-        "info": "",
-        "x": 200,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "6d2338410d9fcf44",
-        "type": "link in",
-        "z": "b6b666e109b1bebf",
-        "name": "/e9beacon5c26/batteryPercentage",
-        "links": [
-            "4fbb33ab4f5e3d5c",
-            "6c22eeed26adb2d2"
-        ],
-        "x": 375,
-        "y": 780,
-        "wires": [
-            [
-                "09399d51b7c3f3c3"
-            ]
-        ]
-    },
-    {
-        "id": "09399d51b7c3f3c3",
-        "type": "ui_chart",
-        "z": "b6b666e109b1bebf",
-        "name": "",
-        "group": "56861f6770d3e2a5",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Battery",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "step",
-        "nodata": "waiting on data....",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 840,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "68184b10f491d41d",
-        "type": "ui_chart",
-        "z": "b6b666e109b1bebf",
-        "name": "",
-        "group": "56861f6770d3e2a5",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Number Of Occupants",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "step",
-        "nodata": "waiting on data....",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "40",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 880,
-        "y": 760,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7b77fac22d517b56",
-        "type": "ui_text",
-        "z": "b6b666e109b1bebf",
-        "group": "56861f6770d3e2a5",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Currently",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 840,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "2971c4dc77ea2cc1",
-        "type": "pareto-anywhere-socketio",
-        "z": "b6b666e109b1bebf",
-        "uri": "http://localhost:3001/devices/c30000131569/3",
-        "deviceid": "",
-        "deviceidtype": "0",
-        "name": "",
-        "x": 140,
-        "y": 420,
-        "wires": [
-            [],
-            [
-                "1f1652afecb6ee09",
-                "0716704ccf36b1cb",
-                "2468fcc74d210bf0"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "f8eacfd8c9261231",
-        "type": "function",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/numberOfOccupants",
-        "func": "let newmsg = {\n    topic: \"/radar1569/numberOfOccupants\",\n            payload: msg.payload.numberOfOccupants};\nreturn newmsg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1140,
-        "y": 420,
-        "wires": [
-            [
-                "c4924579fcf31a69"
-            ]
-        ]
-    },
-    {
-        "id": "1b55a311c8752235",
-        "type": "link out",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/numberOfOccupants",
-        "mode": "link",
-        "links": [
-            "68c2629504ca0b28",
-            "b00b5206398fc5d3",
-            "58da5b866b432383",
-            "cfce5eec5e17f20b",
-            "3e3ee06cc04d5840",
-            "9089710de0df1ad7",
-            "270f40931efab3e3"
-        ],
-        "x": 1705,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "1266a21c9b6073f5",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/numberOfOccupants",
-        "info": "",
-        "x": 1860,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "1f1652afecb6ee09",
-        "type": "function",
-        "z": "b6b666e109b1bebf",
-        "name": "is it numberOfOccupants?",
-        "func": "if(msg.payload.numberOfOccupants){\n    return msg;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 420,
-        "wires": [
-            [
-                "f8eacfd8c9261231"
-            ]
-        ]
-    },
-    {
-        "id": "c4924579fcf31a69",
-        "type": "rbe",
-        "z": "b6b666e109b1bebf",
-        "name": "changed?",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1520,
-        "y": 420,
-        "wires": [
-            [
-                "1b55a311c8752235"
-            ]
-        ]
-    },
-    {
-        "id": "621fe789ddb724dd",
-        "type": "function",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/batteryPercentage",
-        "func": "let newmsg = {\n    topic: \"/radar1569/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1130,
-        "y": 480,
-        "wires": [
-            [
-                "7bc2a1f155cb77a7"
-            ]
-        ]
-    },
-    {
-        "id": "6c22eeed26adb2d2",
-        "type": "link out",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/batteryPercentage",
-        "mode": "link",
-        "links": [
-            "89cd1b5d44963cb4",
-            "92148f9250905b6b",
-            "0ba2dd4dcb604546",
-            "1b47c84cab13a9d8",
-            "fddd5d157b9b8608",
-            "6d2338410d9fcf44",
-            "53242798a9172140"
-        ],
-        "x": 1705,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "940f4c331b1ca6d8",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "/radar1569/batteryPercentage",
-        "info": "",
-        "x": 1850,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "0716704ccf36b1cb",
-        "type": "function",
-        "z": "b6b666e109b1bebf",
-        "name": "is it batteryPercentage?",
-        "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 690,
-        "y": 480,
-        "wires": [
-            [
-                "621fe789ddb724dd"
-            ]
-        ]
-    },
-    {
-        "id": "7bc2a1f155cb77a7",
-        "type": "rbe",
-        "z": "b6b666e109b1bebf",
-        "name": "changed?",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1520,
-        "y": 480,
-        "wires": [
-            [
-                "6c22eeed26adb2d2"
-            ]
-        ]
-    },
-    {
-        "id": "2468fcc74d210bf0",
-        "type": "function",
-        "z": "b6b666e109b1bebf",
-        "name": "save to capturedBLE",
-        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 150,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "da06912234f70dac",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "/devices/c30000131569/3",
-        "info": "",
-        "x": 140,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "c6fec0544cb2b93b",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "create a friendly topic name, and assign the payload here",
-        "info": "",
-        "x": 1170,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "db1e826a4034c4b7",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
-        "info": "",
-        "x": 1970,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "36c9f3e988721e2b",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "Confirm the property of the right name exists...",
-        "info": "",
-        "x": 760,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "486f2afdedc21576",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "Only send if it's changed...",
-        "info": "",
-        "x": 1510,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "781ad0128ff96ae3",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "Create UI elements for each of the sensor outputs",
-        "info": "",
-        "x": 230,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "856c5de6f2a29b25",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "Open the ParetoAnywhere Object to set a Device URI",
-        "info": "",
-        "x": 240,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "12796d596cbc464c",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
+        "z": "b6bfd1423dd1a748",
         "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
         "info": "",
         "x": 290,
-        "y": 240,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "3880d5a02d4e702d",
+        "id": "a508c6687d374990",
         "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
+        "z": "b6bfd1423dd1a748",
+        "name": "The idType for this device is 3 (RND-48)",
         "info": "",
-        "x": 800,
-        "y": 200,
+        "x": 190,
+        "y": 180,
         "wires": []
     },
     {
-        "id": "af8b5f21d07338ba",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "Open the ParetoAnywhere Object to set a Device URI",
-        "info": "",
-        "x": 240,
-        "y": 160,
+        "id": "195c0ccb68812e9a",
+        "type": "pareto-anywhere-socketio",
+        "z": "b6bfd1423dd1a748",
+        "uri": "http://localhost:3001/devices/c30000131569/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "Minew MSR01",
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "f08e8f06659526c2"
+            ],
+            [
+                "44b9fa03b95b3783",
+                "3bc2521cfab7ef50",
+                "75207a7a465616dc"
+            ],
+            [
+                "9ab86ed3653e4f18"
+            ]
+        ]
+    },
+    {
+        "id": "3bc2521cfab7ef50",
+        "type": "debug",
+        "z": "b6bfd1423dd1a748",
+        "name": "numberOfOccupants",
+        "active": false,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload.numberOfOccupants",
+        "targetType": "msg",
+        "statusVal": "payload.isMotionDetected",
+        "statusType": "auto",
+        "x": 470,
+        "y": 480,
         "wires": []
     },
     {
-        "id": "7b77f66dc8eea23b",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "Format: http://localhost:3001/devices/[DEVICE_ID]/[DEVICE_ID_TYPE]",
-        "info": "",
-        "x": 710,
-        "y": 160,
+        "id": "44b9fa03b95b3783",
+        "type": "debug",
+        "z": "b6bfd1423dd1a748",
+        "name": "batteryPercentage",
+        "active": false,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload.batteryPercentage",
+        "targetType": "msg",
+        "statusVal": "payload.isMotionDetected",
+        "statusType": "auto",
+        "x": 460,
+        "y": 540,
         "wires": []
     },
     {
-        "id": "29210271a95bfe6e",
-        "type": "comment",
-        "z": "b6b666e109b1bebf",
-        "name": "open the UI and look under \"BLE Devices\" to see devices, their deviceId, and deviceIdType values",
-        "info": "",
-        "x": 380,
-        "y": 120,
+        "id": "f08e8f06659526c2",
+        "type": "debug",
+        "z": "b6bfd1423dd1a748",
+        "name": "raddec",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "56861f6770d3e2a5",
-        "type": "ui_group",
-        "name": "Radar1569",
-        "tab": "1298aa3fd6cc5da5",
-        "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
+        "id": "75207a7a465616dc",
+        "type": "debug",
+        "z": "b6bfd1423dd1a748",
+        "name": "dynamb",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 340,
+        "wires": []
     },
     {
-        "id": "1298aa3fd6cc5da5",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
+        "id": "9ab86ed3653e4f18",
+        "type": "debug",
+        "z": "b6bfd1423dd1a748",
+        "name": "spatem",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 400,
+        "wires": []
     }
 ]
